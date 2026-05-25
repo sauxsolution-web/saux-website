@@ -35,7 +35,7 @@ No Leads Found
 }
 else{
 
-leads.reverse().forEach((lead,index)=>{
+[...leads].reverse().forEach((lead,index)=>{
 
 container.innerHTML += `
 
