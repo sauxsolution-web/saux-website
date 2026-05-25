@@ -16,13 +16,13 @@ if(leads.length === 0){
 
 container.innerHTML = `
 
-<div class="lead-card">
+<tr>
 
-<h3>No Leads Found</h3>
+<td colspan="10">
+No Leads Found
+</td>
 
-<p>No enquiry submissions available.</p>
-
-</div>
+</tr>
 
 `;
 
@@ -33,27 +33,139 @@ leads.reverse().forEach((lead,index)=>{
 
 container.innerHTML += `
 
-<div class="lead-card">
+<tr>
 
-<h3>${lead.name}</h3>
+<td>${index + 1}</td>
 
-<p><strong>Email:</strong> ${lead.email}</p>
+<td>${lead.date || "N/A"}</td>
 
-<p><strong>Phone:</strong> ${lead.phone}</p>
+<td>${lead.name}</td>
 
-<p><strong>Message:</strong> ${lead.message}</p>
+<td>${lead.phone}</td>
 
-<button class="delete-btn" onclick="deleteLead(${index})">
-Delete Lead
+<td>${lead.email}</td>
+
+<td>${lead.message}</td>
+
+<td>
+
+<select onchange="updateStatus(${index},this.value)">
+
+<option ${lead.status === "New" ? "selected" : ""}>
+New
+</option>
+
+<option ${lead.status === "Pitched" ? "selected" : ""}>
+Pitched
+</option>
+
+<option ${lead.status === "Follow-Up" ? "selected" : ""}>
+Follow-Up
+</option>
+
+<option ${lead.status === "Converted" ? "selected" : ""}>
+Converted
+</option>
+
+</select>
+
+</td>
+
+<td>
+
+<select onchange="assignExecutive(${index},this.value)">
+
+<option value="">Select</option>
+
+<option ${lead.executive === "Rahul" ? "selected" : ""}>
+Rahul
+</option>
+
+<option ${lead.executive === "Amit" ? "selected" : ""}>
+Amit
+</option>
+
+<option ${lead.executive === "Priya" ? "selected" : ""}>
+Priya
+</option>
+
+</select>
+
+</td>
+
+<td>
+
+<button class="share-btn"
+onclick="shareLead(${index})">
+
+Share
+
 </button>
 
-</div>
+</td>
+
+<td>
+
+<button class="delete-btn"
+onclick="deleteLead(${index})">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
 
 `;
 
 });
 
 }
+
+}
+
+function updateStatus(index,status){
+
+leads[index].status = status;
+
+localStorage.setItem("enquiries",JSON.stringify(leads));
+
+}
+
+function assignExecutive(index,executive){
+
+leads[index].executive = executive;
+
+localStorage.setItem("enquiries",JSON.stringify(leads));
+
+}
+
+function shareLead(index){
+
+let lead = leads[index];
+
+let text = `
+
+🔥 New Lead Assigned
+
+Name: ${lead.name}
+
+Phone: ${lead.phone}
+
+Email: ${lead.email}
+
+Requirement: ${lead.message}
+
+Status: ${lead.status || "New"}
+
+`;
+
+window.open(
+
+`https://wa.me/?text=${encodeURIComponent(text)}`
+
+);
 
 }
 
@@ -65,11 +177,95 @@ if(confirmDelete){
 
 leads.splice(index,1);
 
-localStorage.setItem("enquiries", JSON.stringify(leads));
+localStorage.setItem("enquiries",JSON.stringify(leads));
 
 loadLeads();
 
 }
+
+}
+
+function searchLead(){
+
+let input =
+document.getElementById("searchLead")
+.value.toLowerCase();
+
+let rows =
+document.querySelectorAll("tbody tr");
+
+rows.forEach((row)=>{
+
+if(row.innerText.toLowerCase().includes(input)){
+
+row.style.display = "";
+
+}
+else{
+
+row.style.display = "none";
+
+}
+
+});
+
+}
+
+function exportCSV(){
+
+let csv = [];
+
+let headers = [
+
+"No",
+"Date",
+"Name",
+"Phone",
+"Email",
+"Requirement",
+"Status",
+"Executive"
+
+];
+
+csv.push(headers.join(","));
+
+leads.forEach((lead,index)=>{
+
+let row = [
+
+index + 1,
+lead.date || "",
+lead.name || "",
+lead.phone || "",
+lead.email || "",
+lead.message || "",
+lead.status || "New",
+lead.executive || ""
+
+];
+
+csv.push(row.join(","));
+
+});
+
+let csvFile = new Blob([csv.join("\n")],{
+type:"text/csv"
+});
+
+let downloadLink =
+document.createElement("a");
+
+downloadLink.download = "saux_leads.csv";
+
+downloadLink.href =
+window.URL.createObjectURL(csvFile);
+
+downloadLink.style.display = "none";
+
+document.body.appendChild(downloadLink);
+
+downloadLink.click();
 
 }
 
@@ -80,13 +276,5 @@ sessionStorage.removeItem("adminLoggedIn");
 window.location.href = "login.html";
 
 }
-
-setTimeout(()=>{
-
-sessionStorage.removeItem("adminLoggedIn");
-
-window.location.href = "login.html";
-
-},1800000);
 
 loadLeads();
