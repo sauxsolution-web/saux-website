@@ -102,17 +102,6 @@ Share
 
 </td>
 
-<td>
-
-<button class="delete-btn"
-onclick="deleteLead(${index})">
-
-Delete
-
-</button>
-
-</td>
-
 </tr>
 
 `;
