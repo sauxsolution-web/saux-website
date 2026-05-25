@@ -39,10 +39,41 @@ localStorage.setItem(
 JSON.stringify(enquiries)
 );
 
-alert("Enquiry Submitted Successfully");
+emailjs.send(
+
+"SERVICE_ID",
+
+"TEMPLATE_ID",
+
+{
+
+name: enquiry.name,
+email: enquiry.email,
+phone: enquiry.phone,
+message: enquiry.message,
+date: enquiry.date
+
+},
+
+"PUBLIC_KEY"
+
+)
+
+.then(function(){
+
+alert(
+"Enquiry Submitted Successfully"
+);
 
 document
 .getElementById("enquiryForm")
 .reset();
+
+})
+.catch(function(error){
+
+alert("Failed: " + error);
+
+});
 
 });
