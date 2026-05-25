@@ -41,28 +41,38 @@ JSON.stringify(enquiries)
 
 emailjs.send(
 
-"SERVICE_ID",
+"YOUR_SERVICE_ID",
 
-"TEMPLATE_ID",
+"YOUR_TEMPLATE_ID",
 
 {
 
 name: enquiry.name,
+
 email: enquiry.email,
+
 phone: enquiry.phone,
+
 message: enquiry.message,
+
 date: enquiry.date
 
 },
 
-"PUBLIC_KEY"
+"YOUR_PUBLIC_KEY"
 
 )
 
-.then(function(){
+.then(function(response){
 
 alert(
 "Enquiry Submitted Successfully"
+);
+
+console.log(
+"SUCCESS!",
+response.status,
+response.text
 );
 
 document
@@ -72,7 +82,14 @@ document
 })
 .catch(function(error){
 
-alert("Failed: " + error);
+alert(
+"Failed To Send Enquiry"
+);
+
+console.log(
+"FAILED...",
+error
+);
 
 });
 
