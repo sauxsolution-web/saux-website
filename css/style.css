@@ -648,3 +648,21 @@ font-size:28px;
 }
 
 }
+
+.call-float{
+position:fixed;
+bottom:100px;
+right:25px;
+width:65px;
+height:65px;
+background:#ff9800;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+color:white;
+text-decoration:none;
+z-index:999;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
