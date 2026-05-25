@@ -118,7 +118,7 @@ Share
 
 }
 
-function updateStatus(index,status){
+function assignExecutive(index,executive)
 
 leads[index].status = status;
 
