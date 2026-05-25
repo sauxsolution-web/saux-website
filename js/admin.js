@@ -77,16 +77,14 @@ Converted
 
 <option value="">Select</option>
 
-<option ${lead.executive === "Rahul" ? "selected" : ""}>
-Rahul
+<option ${lead.executive === "Vaibhav" ? "selected" : ""}>
+Vaibhav
 </option>
 
-<option ${lead.executive === "Amit" ? "selected" : ""}>
-Amit
+<option ${lead.executive === "Supriya" ? "selected" : ""}>
+Supriya
 </option>
 
-<option ${lead.executive === "Priya" ? "selected" : ""}>
-Priya
 </option>
 
 </select>
