@@ -82,13 +82,10 @@ document
 })
 .catch(function(error){
 
-alert(
-"Failed To Send Enquiry"
-);
+console.log(error);
 
-console.log(
-"FAILED...",
-error
+alert(
+JSON.stringify(error)
 );
 
 });
