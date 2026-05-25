@@ -1,5 +1,11 @@
 if(sessionStorage.getItem("adminLoggedIn") !== "true"){
 
+window.location.href =
+"sauxsecureportal2026.html";
+
+}
+if(sessionStorage.getItem("adminLoggedIn") !== "true"){
+
 window.location.href = "login.html";
 
 }
