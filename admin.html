@@ -1,8 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Admin Panel</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SAUX.IN Admin Panel</title>
+
 <link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -10,23 +19,75 @@
 <header>
 
 <div class="logo">
-<h2>SAUX ADMIN PANEL</h2>
+
+<h2>SAUX.IN CRM PANEL</h2>
+
+</div>
+
+<div>
+
+<button onclick="exportCSV()" class="btn export-btn">
+Export CSV
+</button>
+
+<button onclick="logout()" class="btn logout-btn">
+Logout
+</button>
+
 </div>
 
 </header>
 
 <section class="admin-panel">
 
-<h1>Enquiry Leads</h1>
-<button onclick="logout()" class="btn logout-btn">
-Logout
-</button>
+<div class="admin-top">
 
-<div id="leadsContainer"></div>
+<h1>Enquiry Lead Dashboard</h1>
+
+<input
+type="text"
+id="searchLead"
+placeholder="Search Lead..."
+onkeyup="searchLead()"
+>
+
+</div>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>No</th>
+<th>Date</th>
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Requirement</th>
+<th>Status</th>
+<th>Executive</th>
+<th>Share Lead</th>
+<th>Delete</th>
+
+</tr>
+
+</thead>
+
+<tbody id="leadsContainer">
+
+</tbody>
+
+</table>
+
+</div>
 
 </section>
 
 <script src="js/admin.js"></script>
 
 </body>
+
 </html>
