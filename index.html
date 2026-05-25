@@ -36,7 +36,6 @@
 <a href="about.html">About</a>
 <a href="services.html">Services</a>
 <a href="enquiry.html">Enquiry</a>
-<a href="contact.html">Contact</a>
 
 </nav>
 
@@ -368,7 +367,37 @@ Professional eCommerce Seller Service Platform
 
 </a>
 
-<script src="js/script.js"></script>
+<script>
+
+document.addEventListener("contextmenu",
+event => event.preventDefault());
+
+document.onkeydown = function(e){
+
+if(e.keyCode == 123){
+
+return false;
+
+}
+
+if(e.ctrlKey &&
+e.shiftKey &&
+e.keyCode == 'I'.charCodeAt(0)){
+
+return false;
+
+}
+
+if(e.ctrlKey &&
+e.keyCode == 'U'.charCodeAt(0)){
+
+return false;
+
+}
+
+}
+
+</script>
 
 </body>
 
