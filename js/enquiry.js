@@ -43,7 +43,7 @@ emailjs.send(
 
 "YOUR_SERVICE_ID",
 
-"YOUR_TEMPLATE_ID",
+"template_5bm6g8i",
 
 {
 
@@ -59,7 +59,7 @@ date: enquiry.date
 
 },
 
-"YOUR_PUBLIC_KEY"
+"D_mM71rKR_GZPhnG7"
 
 )
 
