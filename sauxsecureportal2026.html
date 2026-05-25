@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SAUX Secure Portal</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+</head>
+
 <body>
 
 <div class="login-container">
@@ -8,12 +25,20 @@
 
 <p>Authorized Access Only</p>
 
-<input type="text" id="username" placeholder="Enter Username">
+<input
+type="text"
+id="username"
+placeholder="Enter Username">
 
-<input type="password" id="password" placeholder="Enter Password">
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
 
-<button onclick="login()" class="btn">
+<button id="loginBtn" class="btn">
+
 Login
+
 </button>
 
 <p id="error"></p>
@@ -22,8 +47,8 @@ Login
 
 </div>
 
-<script>
-
-<script src="js/auth.js"></script>
+<script src="./js/auth.js"></script>
 
 </body>
+
+</html>
