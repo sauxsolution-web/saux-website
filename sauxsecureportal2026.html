@@ -24,30 +24,6 @@ Login
 
 <script>
 
-function login(){
-
-const username = document.getElementById("username").value;
-const password = document.getElementById("password").value;
-
-const adminUser = "sauxadmin";
-const adminPass = "saux@2026";
-
-if(username === adminUser && password === adminPass){
-
-sessionStorage.setItem("adminLoggedIn","true");
-
-window.location.href = "admin.html";
-
-}
-else{
-
-document.getElementById("error").innerHTML =
-"Invalid Username or Password";
-
-}
-
-}
-
-</script>
+<script src="js/auth.js"></script>
 
 </body>
