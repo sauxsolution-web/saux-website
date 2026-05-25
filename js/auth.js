@@ -1,4 +1,5 @@
 const encodedUser = "c2F1eGFkbWlu";
+
 const encodedPass = "c2F1eEAyMDI2";
 
 function decode(value){
@@ -7,7 +8,9 @@ return atob(value);
 
 }
 
-function login(){
+document
+.getElementById("loginBtn")
+.addEventListener("click", function(){
 
 const username =
 document.getElementById("username").value;
@@ -17,7 +20,9 @@ document.getElementById("password").value;
 
 if(
 
-username === decode(encodedUser) &&
+username === decode(encodedUser)
+
+&&
 
 password === decode(encodedPass)
 
@@ -35,8 +40,8 @@ else{
 
 document.getElementById("error")
 .innerHTML =
-"Invalid Credentials";
+"Invalid Username or Password";
 
 }
 
-}
+});
