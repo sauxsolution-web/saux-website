@@ -255,3 +255,14 @@ window.location.href = "login.html";
 }
 
 loadLeads();
+
+function logout(){
+
+sessionStorage.removeItem(
+"adminLoggedIn"
+);
+
+window.location.href =
+"sauxsecureportal2026.html";
+
+}
