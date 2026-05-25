@@ -4,15 +4,14 @@ window.location.href =
 "sauxsecureportal2026.html";
 
 }
-if(sessionStorage.getItem("adminLoggedIn") !== "true"){
 
-window.location.href = "login.html";
+let leads =
+JSON.parse(
+localStorage.getItem("enquiries")
+) || [];
 
-}
-
-let leads = JSON.parse(localStorage.getItem("enquiries")) || [];
-
-let container = document.getElementById("leadsContainer");
+let container =
+document.getElementById("leadsContainer");
 
 function loadLeads(){
 
@@ -24,8 +23,10 @@ container.innerHTML = `
 
 <tr>
 
-<td colspan="10">
+<td colspan="9">
+
 No Leads Found
+
 </td>
 
 </tr>
@@ -35,7 +36,9 @@ No Leads Found
 }
 else{
 
-[...leads].reverse().forEach((lead,index)=>{
+[...leads]
+.reverse()
+.forEach((lead,index)=>{
 
 container.innerHTML += `
 
@@ -45,32 +48,45 @@ container.innerHTML += `
 
 <td>${lead.date || "N/A"}</td>
 
-<td>${lead.name}</td>
+<td>${lead.name || ""}</td>
 
-<td>${lead.phone}</td>
+<td>${lead.phone || ""}</td>
 
-<td>${lead.email}</td>
+<td>${lead.email || ""}</td>
 
-<td>${lead.message}</td>
+<td>${lead.message || ""}</td>
 
 <td>
 
-<select onchange="updateStatus(${index},this.value)">
+<select
+onchange="updateStatus(${index},this.value)">
 
-<option ${lead.status === "New" ? "selected" : ""}>
+<option value="New"
+${lead.status === "New" ? "selected" : ""}>
+
 New
+
 </option>
 
-<option ${lead.status === "Pitched" ? "selected" : ""}>
+<option value="Pitched"
+${lead.status === "Pitched" ? "selected" : ""}>
+
 Pitched
+
 </option>
 
-<option ${lead.status === "Follow-Up" ? "selected" : ""}>
+<option value="Follow-Up"
+${lead.status === "Follow-Up" ? "selected" : ""}>
+
 Follow-Up
+
 </option>
 
-<option ${lead.status === "Converted" ? "selected" : ""}>
+<option value="Converted"
+${lead.status === "Converted" ? "selected" : ""}>
+
 Converted
+
 </option>
 
 </select>
@@ -79,17 +95,24 @@ Converted
 
 <td>
 
-<select onchange="assignExecutive(${index},this.value)">
+<select
+onchange="assignExecutive(${index},this.value)">
 
-<option value="">Select</option>
+<option value="">
+Select
+</option>
 
-<option ${lead.executive === "Vaibhav" ? "selected" : ""}>
+<option value="Vaibhav"
+${lead.executive === "Vaibhav" ? "selected" : ""}>
+
 Vaibhav
+
 </option>
 
-<option ${lead.executive === "Supriya" ? "selected" : ""}>
+<option value="Supriya"
+${lead.executive === "Supriya" ? "selected" : ""}>
+
 Supriya
-</option>
 
 </option>
 
@@ -99,7 +122,8 @@ Supriya
 
 <td>
 
-<button class="share-btn"
+<button
+class="share-btn"
 onclick="shareLead(${index})">
 
 Share
@@ -118,29 +142,45 @@ Share
 
 }
 
-function assignExecutive(index,executive)
+function updateStatus(index,status){
 
-leads[index].status = status;
+let actualIndex =
+leads.length - 1 - index;
 
-localStorage.setItem("enquiries",JSON.stringify(leads));
+leads[actualIndex].status = status;
+
+localStorage.setItem(
+"enquiries",
+JSON.stringify(leads)
+);
 
 }
 
 function assignExecutive(index,executive){
 
-leads[index].executive = executive;
+let actualIndex =
+leads.length - 1 - index;
 
-localStorage.setItem("enquiries",JSON.stringify(leads));
+leads[actualIndex].executive =
+executive;
+
+localStorage.setItem(
+"enquiries",
+JSON.stringify(leads)
+);
 
 }
 
 function shareLead(index){
 
-let lead = leads[index];
+let actualIndex =
+leads.length - 1 - index;
+
+let lead = leads[actualIndex];
 
 let text = `
 
-🔥 New Lead Assigned
+🔥 SAUX.IN New Lead
 
 Name: ${lead.name}
 
@@ -151,6 +191,9 @@ Email: ${lead.email}
 Requirement: ${lead.message}
 
 Status: ${lead.status || "New"}
+
+Executive:
+${lead.executive || "Not Assigned"}
 
 `;
 
@@ -165,15 +208,23 @@ window.open(
 function searchLead(){
 
 let input =
-document.getElementById("searchLead")
-.value.toLowerCase();
+document
+.getElementById("searchLead")
+.value
+.toLowerCase();
 
 let rows =
 document.querySelectorAll("tbody tr");
 
 rows.forEach((row)=>{
 
-if(row.innerText.toLowerCase().includes(input)){
+if(
+
+row.innerText
+.toLowerCase()
+.includes(input)
+
+){
 
 row.style.display = "";
 
@@ -226,35 +277,32 @@ csv.push(row.join(","));
 
 });
 
-let csvFile = new Blob([csv.join("\n")],{
+let csvFile = new Blob(
+[csv.join("\n")],
+{
 type:"text/csv"
-});
+}
+);
 
 let downloadLink =
 document.createElement("a");
 
-downloadLink.download = "saux_leads.csv";
+downloadLink.download =
+"saux_leads.csv";
 
 downloadLink.href =
 window.URL.createObjectURL(csvFile);
 
-downloadLink.style.display = "none";
+downloadLink.style.display =
+"none";
 
-document.body.appendChild(downloadLink);
+document.body.appendChild(
+downloadLink
+);
 
 downloadLink.click();
 
 }
-
-function logout(){
-
-sessionStorage.removeItem("adminLoggedIn");
-
-window.location.href = "login.html";
-
-}
-
-loadLeads();
 
 function logout(){
 
@@ -266,3 +314,5 @@ window.location.href =
 "sauxsecureportal2026.html";
 
 }
+
+loadLeads();
