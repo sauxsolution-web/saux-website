@@ -156,22 +156,6 @@ window.open(
 
 }
 
-function deleteLead(index){
-
-let confirmDelete = confirm("Delete this lead?");
-
-if(confirmDelete){
-
-leads.splice(index,1);
-
-localStorage.setItem("enquiries",JSON.stringify(leads));
-
-loadLeads();
-
-}
-
-}
-
 function searchLead(){
 
 let input =
