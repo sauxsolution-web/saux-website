@@ -150,8 +150,11 @@ leads.length - 1 - index;
 leads[actualIndex].status = status;
 
 localStorage.setItem(
+
 "enquiries",
+
 JSON.stringify(leads)
+
 );
 
 }
@@ -165,8 +168,11 @@ leads[actualIndex].executive =
 executive;
 
 localStorage.setItem(
+
 "enquiries",
+
 JSON.stringify(leads)
+
 );
 
 }
@@ -199,7 +205,7 @@ ${lead.executive || "Not Assigned"}
 
 window.open(
 
-`https://wa.me/?text=${encodeURIComponent(text)}`
+`https://wa.me/919226494403?text=${encodeURIComponent(text)}`
 
 );
 
@@ -316,3 +322,14 @@ window.location.href =
 }
 
 loadLeads();
+
+setInterval(function(){
+
+leads =
+JSON.parse(
+localStorage.getItem("enquiries")
+) || [];
+
+loadLeads();
+
+},3000);
