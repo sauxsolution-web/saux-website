@@ -35,8 +35,11 @@ localStorage.getItem("enquiries")
 enquiries.push(enquiry);
 
 localStorage.setItem(
+
 "enquiries",
+
 JSON.stringify(enquiries)
+
 );
 
 alert(
