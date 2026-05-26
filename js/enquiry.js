@@ -35,59 +35,19 @@ localStorage.getItem("enquiries")
 enquiries.push(enquiry);
 
 localStorage.setItem(
+
 "enquiries",
+
 JSON.stringify(enquiries)
+
 );
-
-emailjs.send(
-
-"service_1eilwi9",
-
-"template_5bm6g8i",
-
-{
-
-name: enquiry.name,
-
-email: enquiry.email,
-
-phone: enquiry.phone,
-
-message: enquiry.message,
-
-date: enquiry.date
-
-},
-
-"D_mM71rKR_GZPhnG7"
-
-)
-
-.then(function(response){
 
 alert(
 "Enquiry Submitted Successfully"
 );
 
-console.log(
-"SUCCESS!",
-response.status,
-response.text
-);
-
 document
 .getElementById("enquiryForm")
 .reset();
-
-})
-.catch(function(error){
-
-console.log(error);
-
-alert(
-JSON.stringify(error)
-);
-
-});
 
 });
