@@ -10,14 +10,14 @@
 content="width=device-width, initial-scale=1.0">
 
 <title>
-SAUX.IN Services | Amazon & eCommerce Marketplace Solutions
+SAUX.IN | Amazon Service Provider Services
 </title>
 
 <meta name="description"
-content="SAUX.IN provides Amazon Account Management, Cataloging, Enhanced Brand Content, Product Imaging, FBA Prep & Packaging, Seller Training, Advertising Optimization and eCommerce business support services in India.">
+content="SAUX.IN provides Amazon Account Management, Imaging, FBA Prep & Packaging and Training services for Amazon sellers.">
 
 <meta name="keywords"
-content="Amazon Account Management, Amazon Imaging, FBA Prep Packaging, Amazon Seller Training, Amazon Advertising, Catalog Management, A+ Content, eCommerce Services India">
+content="Amazon Account Management, Amazon Imaging, FBA Prep and Packaging, Amazon Seller Training, Amazon Service Provider">
 
 <link rel="stylesheet"
 href="css/style.css?v=10">
@@ -28,11 +28,394 @@ rel="stylesheet">
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+<style>
+
+/* ================================
+   AMAZON SERVICES PAGE
+================================ */
+
+.amazon-services {
+    padding: 80px 7%;
+}
+
+.amazon-intro {
+    max-width: 900px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.amazon-intro h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.amazon-intro p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* SERVICE CARDS */
+
+.amazon-service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.amazon-service-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: 0.3s ease;
+}
+
+.amazon-service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.13);
+}
+
+
+/* SERVICE ICON */
+
+.service-icon {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 22px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    font-size: 38px;
+}
+
+.amazon-service-card h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.amazon-service-card p {
+    line-height: 1.7;
+    font-size: 15px;
+    color: #555;
+}
+
+
+/* BUTTON */
+
+.service-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    background: #111827;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.service-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+/* DETAIL SECTIONS */
+
+.service-detail {
+    padding: 90px 7%;
+    background: #f8fafc;
+}
+
+.service-detail:nth-child(even) {
+    background: #fff;
+}
+
+.detail-container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.detail-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.detail-icon {
+    width: 95px;
+    height: 95px;
+    margin: 0 auto 20px;
+    border-radius: 25px;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+}
+
+.detail-header h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.detail-header p {
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.8;
+    color: #555;
+}
+
+
+/* DETAIL GRID */
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.detail-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.05);
+}
+
+.detail-box h3 {
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.detail-box p {
+    line-height: 1.8;
+    color: #555;
+}
+
+.detail-box ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.detail-box li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+
+/* PROCESS */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.process-card {
+    background: #fff;
+    padding: 25px 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid #e5e7eb;
+}
+
+.process-number {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    color: #fff;
+    font-weight: 700;
+}
+
+.process-card h4 {
+    margin-bottom: 10px;
+}
+
+.process-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+
+/* EVIDENCE SECTION */
+
+.evidence-section {
+    padding: 90px 7%;
+}
+
+.evidence-container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.evidence-container h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.evidence-container > p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.evidence-card {
+    padding: 30px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.evidence-card i {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.evidence-card h3 {
+    margin-bottom: 12px;
+}
+
+.evidence-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+
+/* TESTIMONIALS */
+
+.testimonials {
+    padding: 90px 7%;
+    background: #f8fafc;
+}
+
+.testimonial-grid {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.testimonial-stars {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.testimonial-card p {
+    line-height: 1.7;
+    color: #555;
+}
+
+.testimonial-card h4 {
+    margin-top: 20px;
+    margin-bottom: 4px;
+}
+
+.testimonial-card span {
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* CTA */
+
+.amazon-cta {
+    padding: 80px 7%;
+    text-align: center;
+}
+
+.amazon-cta h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.amazon-cta p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+
+    .amazon-service-grid,
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .evidence-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .amazon-services,
+    .service-detail,
+    .evidence-section,
+    .testimonials,
+    .amazon-cta {
+        padding: 60px 5%;
+    }
+
+    .amazon-intro h2,
+    .detail-header h2,
+    .amazon-cta h2 {
+        font-size: 28px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================================
+     HEADER
+================================ -->
 
 <header>
 
@@ -59,7 +442,9 @@ alt="SAUX.IN Logo">
 
 </header>
 
-<!-- HERO -->
+<!-- ================================
+     HERO
+================================ -->
 
 <section class="hero">
 
@@ -69,22 +454,22 @@ alt="SAUX.IN Logo">
 
 <h1>
 
-Our <span>Service Ecosystem</span>
+Amazon <span>Services</span>
 
 </h1>
 
 <p>
 
-Professional Amazon and eCommerce marketplace services
-covering account management, cataloging, imaging,
-FBA preparation, seller training and advertising optimization.
+Professional services for Amazon sellers covering
+Account Management, Imaging, FBA Prep & Packaging
+and Seller Training.
 
 </p>
 
-<a href="enquiry.html"
+<a href="#amazon-services"
 class="btn">
 
-Get Started
+Explore Services
 
 </a>
 
@@ -92,37 +477,46 @@ Get Started
 
 </section>
 
-<!-- AMAZON SPN SERVICES -->
+<!-- ================================
+     MAIN SERVICES
+================================ -->
 
-<section>
+<section class="amazon-services"
+id="amazon-services">
 
-<div class="section-heading">
+<div class="amazon-intro">
 
 <h2>
 
-Amazon Marketplace Services
+Our Amazon Services
 
 </h2>
 
 <p>
 
-Professional support for Amazon sellers across account
-operations, catalog management, product imaging,
-FBA preparation, training and advertising.
+SAUX.IN provides practical Amazon marketplace support
+for sellers and brands. Our services are structured
+around account operations, product presentation,
+FBA preparation and seller education.
+
+Select a service below to learn about our scope,
+process, benefits and expertise.
 
 </p>
 
 </div>
 
-<div class="services-grid">
+<div class="amazon-service-grid">
 
 <!-- ACCOUNT MANAGEMENT -->
 
-<div class="service-card">
+<div class="amazon-service-card">
 
-<img src="assets/amazon.png"
-alt="Amazon Account Management"
-style="height:70px;margin-bottom:20px;">
+<div class="service-icon">
+
+<i class="fas fa-chart-line"></i>
+
+</div>
 
 <h3>
 
@@ -132,144 +526,31 @@ Account Management
 
 <p>
 
-SAUX.IN provides structured Amazon account management
-support covering day-to-day Seller Central operations,
-performance monitoring, catalog activities, inventory
-management and account optimization.
+Comprehensive Amazon account support covering
+performance management, brand protection, FBA
+upgrade support, post-reinstatement management
+and Easy Ship Prime upgrade support.
 
 </p>
 
-<h4>Core Offerings</h4>
+<a href="#account-management"
+class="service-btn">
 
-<p>
+View Service
 
-✓ Complete Account Management<br>
-✓ Performance Management<br>
-✓ Brand Protection Support<br>
-✓ FBA Upgrade Support<br>
-✓ Post-Reinstatement Performance Management<br>
-✓ Easy Ship Prime Upgrade Support
-
-</p>
-
-<h4>Benefits</h4>
-
-<p>
-
-✓ Consistent account monitoring<br>
-✓ Organized marketplace operations<br>
-✓ Early identification of performance issues<br>
-✓ Reduced day-to-day management workload<br>
-✓ Structured account improvement
-
-</p>
-
-</div>
-
-<!-- CATALOGING -->
-
-<div class="service-card">
-
-<img src="assets/amazon.png"
-alt="Amazon Cataloging"
-style="height:70px;margin-bottom:20px;">
-
-<h3>
-
-Cataloging
-
-</h3>
-
-<p>
-
-We create and manage structured Amazon product catalogs
-with accurate product information, optimized content,
-attributes and marketplace-ready product data.
-
-</p>
-
-<h4>Core Offerings</h4>
-
-<p>
-
-✓ Detailed Cataloging<br>
-✓ Basic Cataloging<br>
-✓ Product Information Management<br>
-✓ Product Attributes<br>
-✓ Title & Bullet Point Optimization<br>
-✓ Product Description Support<br>
-✓ Keyword Integration
-
-</p>
-
-<h4>Benefits</h4>
-
-<p>
-
-✓ Accurate product information<br>
-✓ Better catalog organization<br>
-✓ Improved product presentation<br>
-✓ Consistent marketplace content
-
-</p>
-
-</div>
-
-<!-- ENHANCED BRAND -->
-
-<div class="service-card">
-
-<img src="assets/amazon.png"
-alt="Amazon Enhanced Brand Content"
-style="height:70px;margin-bottom:20px;">
-
-<h3>
-
-Enhanced Brand
-
-</h3>
-
-<p>
-
-We help eligible brands create enhanced product content
-that communicates product features, benefits and brand
-information through professionally structured content.
-
-</p>
-
-<h4>Core Offerings</h4>
-
-<p>
-
-✓ A+ Pages / EBC Content<br>
-✓ EBC Content Writing<br>
-✓ EBC Imaging<br>
-✓ EBC Product Videos<br>
-✓ Product Feature Presentation<br>
-✓ Brand Content Structuring
-
-</p>
-
-<h4>Benefits</h4>
-
-<p>
-
-✓ Better product storytelling<br>
-✓ Professional brand presentation<br>
-✓ Clear communication of product benefits<br>
-✓ Consistent brand identity
-
-</p>
+</a>
 
 </div>
 
 <!-- IMAGING -->
 
-<div class="service-card">
+<div class="amazon-service-card">
 
-<img src="assets/amazon.png"
-alt="Amazon Product Imaging"
-style="height:70px;margin-bottom:20px;">
+<div class="service-icon">
+
+<i class="fas fa-camera"></i>
+
+</div>
 
 <h3>
 
@@ -279,48 +560,30 @@ Imaging
 
 <p>
 
-SAUX.IN provides professional product imaging and
-visual content services for marketplace listings.
-Our focus is on clear, accurate and high-quality
-product presentation.
+Professional product imaging services including
+image editing, product photography, male and female
+model photography and 3D product modeling.
 
 </p>
 
-<h4>Core Offerings</h4>
+<a href="#imaging"
+class="service-btn">
 
-<p>
+View Service
 
-✓ Image Editing<br>
-✓ Product Photo Shoot<br>
-✓ Male Model Photo Shoot<br>
-✓ Female Model Photo Shoot<br>
-✓ 3D Product Modeling<br>
-✓ Product Feature Images<br>
-✓ Lifestyle Images<br>
-✓ Image Optimization
-
-</p>
-
-<h4>Benefits</h4>
-
-<p>
-
-✓ Professional product presentation<br>
-✓ Clear communication of product features<br>
-✓ Consistent visual identity<br>
-✓ Marketplace-ready product visuals
-
-</p>
+</a>
 
 </div>
 
-<!-- FBA PREP -->
+<!-- FBA -->
 
-<div class="service-card">
+<div class="amazon-service-card">
 
-<img src="assets/amazon.png"
-alt="Amazon FBA Prep and Packaging"
-style="height:70px;margin-bottom:20px;">
+<div class="service-icon">
+
+<i class="fas fa-box-open"></i>
+
+</div>
 
 <h3>
 
@@ -330,49 +593,30 @@ FBA Prep & Packaging
 
 <p>
 
-We provide FBA preparation and packaging support to help
-sellers organize eligible inventory for shipment to Amazon
-fulfillment centers.
+Product preparation and packaging support for
+eligible inventory requiring labeling, preparation,
+packaging and shipment readiness.
 
 </p>
 
-<h4>Core Offerings</h4>
+<a href="#fba-prep"
+class="service-btn">
 
-<p>
+View Service
 
-✓ Product Receiving<br>
-✓ Inventory Quantity Checking<br>
-✓ Product Inspection<br>
-✓ FNSKU / Barcode Labeling<br>
-✓ Poly-Bagging<br>
-✓ Bubble Wrapping<br>
-✓ Product Bundling<br>
-✓ Set Preparation<br>
-✓ Product Packaging<br>
-✓ FBA Shipment Preparation
-
-</p>
-
-<h4>Benefits</h4>
-
-<p>
-
-✓ Organized inventory preparation<br>
-✓ Reduced preparation workload<br>
-✓ Consistent packaging workflow<br>
-✓ Better shipment readiness
-
-</p>
+</a>
 
 </div>
 
 <!-- TRAINING -->
 
-<div class="service-card">
+<div class="amazon-service-card">
 
-<img src="assets/amazon.png"
-alt="Amazon Seller Training"
-style="height:70px;margin-bottom:20px;">
+<div class="service-icon">
+
+<i class="fas fa-graduation-cap"></i>
+
+</div>
 
 <h3>
 
@@ -382,87 +626,18 @@ Training
 
 <p>
 
-Our Amazon seller training programs provide practical
-guidance for sellers and teams who want to understand
-and manage Amazon marketplace operations effectively.
+Practical Amazon seller training programs covering
+essential Seller Central workflows, marketplace
+operations and advanced seller-management practices.
 
 </p>
 
-<h4>Core Offerings</h4>
+<a href="#training"
+class="service-btn">
 
-<p>
+View Service
 
-✓ Basic Training Course<br>
-✓ Advanced Training Course<br>
-✓ Seller Central Workflows<br>
-✓ Listing & Catalog Management<br>
-✓ Inventory Management<br>
-✓ Account Health Fundamentals<br>
-✓ FBA Fundamentals<br>
-✓ Marketplace Operations
-
-</p>
-
-<h4>Benefits</h4>
-
-<p>
-
-✓ Practical marketplace knowledge<br>
-✓ Better understanding of Seller Central<br>
-✓ Improved operational confidence<br>
-✓ Structured seller training
-
-</p>
-
-</div>
-
-<!-- ADVERTISING -->
-
-<div class="service-card">
-
-<img src="assets/amazon.png"
-alt="Amazon Advertising Optimization"
-style="height:70px;margin-bottom:20px;">
-
-<h3>
-
-Advertising Optimization
-
-</h3>
-
-<p>
-
-We provide Amazon advertising support focused on campaign
-management, keyword optimization, bid monitoring and
-performance improvement.
-
-</p>
-
-<h4>Core Offerings</h4>
-
-<p>
-
-✓ Sponsored Products<br>
-✓ Sponsored Brands<br>
-✓ Brand Store Creation & Management<br>
-✓ Sponsored Products Lite<br>
-✓ Keyword Management<br>
-✓ Bid Optimization<br>
-✓ Search-Term Analysis<br>
-✓ Campaign Monitoring
-
-</p>
-
-<h4>Benefits</h4>
-
-<p>
-
-✓ Better campaign organization<br>
-✓ Improved keyword management<br>
-✓ Controlled advertising spend<br>
-✓ Continuous campaign monitoring
-
-</p>
+</a>
 
 </div>
 
@@ -470,129 +645,197 @@ performance improvement.
 
 </section>
 
-<!-- ACCOUNT MANAGEMENT DETAILS -->
+<!-- ==================================================
+     ACCOUNT MANAGEMENT
+================================================== -->
 
-<section>
+<section class="service-detail"
+id="account-management">
 
-<div class="section-heading">
+<div class="detail-container">
+
+<div class="detail-header">
+
+<div class="detail-icon">
+
+<i class="fas fa-chart-line"></i>
+
+</div>
 
 <h2>
 
-Account Management Expertise
+Account Management
 
 </h2>
 
 <p>
 
-Our account management service is designed around
-continuous monitoring, optimization and operational support.
+SAUX.IN provides structured Amazon account management
+support for sellers who require assistance with
+day-to-day marketplace operations, account performance,
+brand-related monitoring and fulfillment-related
+activities.
+
+Our approach focuses on organized account monitoring,
+identifying operational issues and implementing
+appropriate improvements based on the seller's
+requirements.
 
 </p>
 
 </div>
 
-<div class="services-grid">
+<div class="detail-grid">
 
-<div class="service-card">
+<div class="detail-box">
 
 <h3>
 
-Performance Management
+Core Offerings
+
+</h3>
+
+<ul>
+
+<li>Complete Account Management</li>
+
+<li>Performance Management</li>
+
+<li>Brand Protection</li>
+
+<li>FBA Upgrade</li>
+
+<li>Performance Management Post-Reinstatement</li>
+
+<li>Easy Ship Prime Upgrade</li>
+
+</ul>
+
+</div>
+
+<div class="detail-box">
+
+<h3>
+
+Benefits
+
+</h3>
+
+<ul>
+
+<li>Consistent account monitoring</li>
+
+<li>Better visibility into account performance</li>
+
+<li>Organized marketplace operations</li>
+
+<li>Early identification of operational issues</li>
+
+<li>Reduced day-to-day management workload</li>
+
+<li>Structured account improvement</li>
+
+</ul>
+
+</div>
+
+<div class="detail-box">
+
+<h3>
+
+Our Expertise
 
 </h3>
 
 <p>
 
-We monitor account performance indicators and help
-identify operational areas that may require attention.
-
-<br><br>
-
-✓ Account Health Monitoring<br>
-✓ Performance Notification Review<br>
-✓ Order & Fulfillment Monitoring<br>
-✓ Return & Cancellation Monitoring<br>
-✓ Issue Identification<br>
-✓ Corrective Action Planning
+Our team has practical experience with Amazon seller
+operations including account monitoring, listing
+activities, inventory workflows, performance tracking,
+Seller Central operations and seller-support processes.
 
 </p>
 
 </div>
 
-<div class="service-card">
+<div class="detail-box">
 
 <h3>
 
-Brand Protection
+Service Approach
 
 </h3>
 
 <p>
 
-We assist brand owners with monitoring product listings,
-catalog information and potential brand-related concerns.
-
-<br><br>
-
-✓ Listing Monitoring<br>
-✓ Catalog Review<br>
-✓ Product Content Monitoring<br>
-✓ Brand Information Review<br>
-✓ Reporting & Escalation Support
+We first understand the seller's account requirements,
+review the relevant operational areas, identify
+priorities and then carry out agreed account-management
+activities while monitoring ongoing performance.
 
 </p>
 
 </div>
 
-<div class="service-card">
+</div>
 
-<h3>
+<div class="process-grid">
 
-Post-Reinstatement Management
+<div class="process-card">
 
-</h3>
+<div class="process-number">01</div>
+
+<h4>Review</h4>
 
 <p>
 
-After account reinstatement, we provide continued
-monitoring and operational support to help sellers
-maintain organized account operations.
-
-<br><br>
-
-✓ Account Health Review<br>
-✓ Performance Monitoring<br>
-✓ Listing Review<br>
-✓ Notification Monitoring<br>
-✓ Operational Improvement
+Understand the account and current operational requirements.
 
 </p>
 
 </div>
 
-<div class="service-card">
+<div class="process-card">
 
-<h3>
+<div class="process-number">02</div>
 
-Easy Ship Prime Upgrade
-
-</h3>
+<h4>Identify</h4>
 
 <p>
 
-We assist eligible sellers with understanding and
-organizing the operational requirements related to
-Easy Ship and applicable Prime eligibility.
-
-<br><br>
-
-✓ Eligibility Guidance<br>
-✓ Easy Ship Review<br>
-✓ Fulfillment Monitoring<br>
-✓ Performance Review<br>
-✓ Process Support
+Identify areas requiring attention or improvement.
 
 </p>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-number">03</div>
+
+<h4>Optimize</h4>
+
+<p>
+
+Implement agreed account-management activities.
+
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-number">04</div>
+
+<h4>Monitor</h4>
+
+<p>
+
+Monitor account activity and ongoing performance.
+
+</p>
+
+</div>
 
 </div>
 
@@ -600,245 +843,165 @@ Easy Ship and applicable Prime eligibility.
 
 </section>
 
-<!-- CATALOGING & ENHANCED BRAND -->
+<!-- ==================================================
+     IMAGING
+================================================== -->
 
-<section>
+<section class="service-detail"
+id="imaging">
 
-<div class="section-heading">
+<div class="detail-container">
+
+<div class="detail-header">
+
+<div class="detail-icon">
+
+<i class="fas fa-camera"></i>
+
+</div>
 
 <h2>
 
-Catalog & Brand Content Services
+Imaging
 
 </h2>
 
 <p>
 
-Professional product content designed to provide accurate,
-structured and engaging marketplace information.
+SAUX.IN provides product imaging services designed
+to create clear, professional and marketplace-ready
+visual content. Our services support sellers who
+require product images that accurately communicate
+product appearance, features and usage.
 
 </p>
 
 </div>
 
-<div class="services-grid">
+<div class="detail-grid">
 
-<div class="service-card">
+<div class="detail-box">
 
 <h3>
 
-Detailed Cataloging
+Core Offerings
+
+</h3>
+
+<ul>
+
+<li>Image Editing</li>
+
+<li>Product Photo Shoot</li>
+
+<li>Male Model Photo Shoot</li>
+
+<li>Female Model Photo Shoot</li>
+
+<li>3D Product Modeling</li>
+
+</ul>
+
+</div>
+
+<div class="detail-box">
+
+<h3>
+
+Image Editing Services
+
+</h3>
+
+<ul>
+
+<li>Background removal</li>
+
+<li>White-background image preparation</li>
+
+<li>Image cleanup</li>
+
+<li>Product retouching</li>
+
+<li>Lighting and exposure correction</li>
+
+<li>Product feature graphics</li>
+
+<li>Image resizing and optimization</li>
+
+</ul>
+
+</div>
+
+<div class="detail-box">
+
+<h3>
+
+Photography Services
+
+</h3>
+
+<ul>
+
+<li>Product photography</li>
+
+<li>Multiple-angle product photography</li>
+
+<li>Product detail photography</li>
+
+<li>Male model photography</li>
+
+<li>Female model photography</li>
+
+<li>Lifestyle product photography</li>
+
+</ul>
+
+</div>
+
+<div class="detail-box">
+
+<h3>
+
+Our Expertise
 
 </h3>
 
 <p>
 
-Detailed cataloging includes comprehensive product
-information, attributes, product specifications and
-structured marketplace content.
-
-<br><br>
-
-✓ Product Information<br>
-✓ Attributes<br>
-✓ Specifications<br>
-✓ Titles<br>
-✓ Bullet Points<br>
-✓ Descriptions<br>
-✓ Search Terms
+Our imaging team focuses on clear product presentation,
+accurate visual communication and consistent image
+quality. We prepare visual assets according to the
+requirements agreed for each project.
 
 </p>
 
 </div>
 
-<div class="service-card">
+<div class="detail-box">
 
 <h3>
 
-Basic Cataloging
+Benefits
 
 </h3>
 
-<p>
+<ul>
 
-Basic cataloging support for sellers who require
-structured product information and marketplace-ready
-catalog content.
+<li>Professional product presentation</li>
 
-<br><br>
+<li>Clear communication of product features</li>
 
-✓ Product Data<br>
-✓ Basic Attributes<br>
-✓ Product Titles<br>
-✓ Basic Descriptions<br>
-✓ Catalog Updates
+<li>Consistent visual content</li>
 
-</p>
+<li>Better product representation</li>
+
+<li>Organized marketplace image assets</li>
+
+</ul>
 
 </div>
 
-<div class="service-card">
-
-<h3>
-
-A+ Pages / EBC
-
-</h3>
-
-<p>
-
-We create structured A+ content combining written
-product information and visual assets to communicate
-product features and brand value.
-
-<br><br>
-
-✓ Content Writing<br>
-✓ Image Planning<br>
-✓ Feature Sections<br>
-✓ Product Benefits<br>
-✓ Brand Storytelling
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-EBC Product Videos
-
-</h3>
-
-<p>
-
-Product video content designed to demonstrate product
-features, usage and key benefits in a clear visual format.
-
-<br><br>
-
-✓ Product Video Planning<br>
-✓ Script/Content Support<br>
-✓ Product Demonstration<br>
-✓ Editing Support<br>
-✓ Marketplace-ready Video Assets
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- IMAGING DETAILS -->
-
-<section>
-
-<div class="section-heading">
-
-<h2>
-
-Product Imaging Expertise
-
-</h2>
-
-<p>
-
-Visual content services designed to improve product
-presentation and communicate product information clearly.
-
-</p>
-
-</div>
-
-<div class="services-grid">
-
-<div class="service-card">
-
-<h3>
-
-Image Editing
-
-</h3>
-
-<p>
-
-✓ Background Removal<br>
-✓ White Background Images<br>
-✓ Image Retouching<br>
-✓ Lighting Correction<br>
-✓ Product Cleanup<br>
-✓ Infographic Creation<br>
-✓ Image Resizing
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Product Photo Shoot
-
-</h3>
-
-<p>
-
-✓ Product Photography<br>
-✓ Multiple Product Angles<br>
-✓ Detail Shots<br>
-✓ White Background Photography<br>
-✓ Lifestyle Photography<br>
-✓ Image Selection & Editing
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Male Model Photo Shoot
-
-</h3>
-
-<p>
-
-✓ Model Product Photography<br>
-✓ Product-in-use Images<br>
-✓ Lifestyle Photography<br>
-✓ Multiple Poses<br>
-✓ Image Editing
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Female Model Photo Shoot
-
-</h3>
-
-<p>
-
-✓ Model Product Photography<br>
-✓ Product-in-use Images<br>
-✓ Lifestyle Photography<br>
-✓ Multiple Poses<br>
-✓ Image Editing
-
-</p>
-
-</div>
-
-<div class="service-card">
+<div class="detail-box">
 
 <h3>
 
@@ -848,13 +1011,13 @@ Female Model Photo Shoot
 
 <p>
 
-✓ 3D Product Modeling<br>
-✓ Product Rendering<br>
-✓ Multiple-angle Visualization<br>
-✓ Product Visualization<br>
-✓ Digital Product Assets
+For applicable products, we provide 3D product modeling
+and visualization services that can create multiple
+product views and digital visual assets.
 
 </p>
+
+</div>
 
 </div>
 
@@ -862,90 +1025,200 @@ Female Model Photo Shoot
 
 </section>
 
-<!-- FBA PREP DETAILS -->
+<!-- ==================================================
+     FBA PREP & PACKAGING
+================================================== -->
 
-<section>
+<section class="service-detail"
+id="fba-prep">
 
-<div class="section-heading">
+<div class="detail-container">
+
+<div class="detail-header">
+
+<div class="detail-icon">
+
+<i class="fas fa-box-open"></i>
+
+</div>
 
 <h2>
 
-FBA Preparation Process
+FBA Prep & Packaging
 
 </h2>
 
 <p>
 
-A structured preparation workflow for eligible seller
-inventory requiring FBA preparation and packaging support.
+SAUX.IN provides FBA preparation and packaging support
+for eligible seller inventory. Our workflow is designed
+to help sellers organize products for preparation,
+labeling, packaging and shipment readiness.
+
+Specific preparation activities depend on the product
+and the requirements applicable to the inventory.
 
 </p>
 
 </div>
 
-<div class="services-grid">
+<div class="detail-grid">
 
-<div class="service-card">
+<div class="detail-box">
 
-<h3>01. Receive</h3>
+<h3>
+
+Core Offerings
+
+</h3>
+
+<ul>
+
+<li>Product Receiving</li>
+
+<li>Inventory Quantity Checking</li>
+
+<li>Product Inspection</li>
+
+<li>FNSKU / Barcode Labeling</li>
+
+<li>Poly-Bagging</li>
+
+<li>Bubble Wrapping</li>
+
+<li>Product Bundling</li>
+
+<li>Set Preparation</li>
+
+<li>Product Packaging</li>
+
+<li>FBA Shipment Preparation</li>
+
+</ul>
+
+</div>
+
+<div class="detail-box">
+
+<h3>
+
+Benefits
+
+</h3>
+
+<ul>
+
+<li>Organized inventory preparation</li>
+
+<li>Reduced preparation workload</li>
+
+<li>Consistent preparation workflow</li>
+
+<li>Better shipment readiness</li>
+
+<li>Centralized preparation support</li>
+
+</ul>
+
+</div>
+
+<div class="detail-box">
+
+<h3>
+
+Our Expertise
+
+</h3>
 
 <p>
 
-Inventory is received and organized for preparation.
+Our team has practical experience with marketplace
+inventory workflows and product preparation activities.
+We review the applicable requirements for the seller's
+products before carrying out agreed preparation work.
 
 </p>
 
 </div>
 
-<div class="service-card">
+<div class="detail-box">
 
-<h3>02. Inspect</h3>
+<h3>
+
+Preparation Process
+
+</h3>
 
 <p>
 
-Products and quantities are checked according to
-the agreed preparation process.
+Inventory is received, checked and organized. Applicable
+preparation activities are then completed, followed by
+packaging and shipment preparation according to the
+requirements relevant to the products.
 
 </p>
 
 </div>
 
-<div class="service-card">
+</div>
 
-<h3>03. Prepare</h3>
+<div class="process-grid">
+
+<div class="process-card">
+
+<div class="process-number">01</div>
+
+<h4>Receive</h4>
 
 <p>
 
-Applicable labeling, wrapping, bundling and other
-preparation activities are completed.
+Inventory is received and organized.
 
 </p>
 
 </div>
 
-<div class="service-card">
+<div class="process-card">
 
-<h3>04. Package</h3>
+<div class="process-number">02</div>
+
+<h4>Inspect</h4>
 
 <p>
 
-Products are packaged according to the applicable
-requirements for the inventory.
+Products and quantities are checked.
 
 </p>
 
 </div>
 
-<div class="service-card">
+<div class="process-card">
 
-<h3>05. Shipment Ready</h3>
+<div class="process-number">03</div>
+
+<h4>Prepare</h4>
 
 <p>
 
-Prepared inventory is organized for shipment to
-the designated Amazon fulfillment location.
+Required preparation and labeling activities are completed.
 
 </p>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-number">04</div>
+
+<h4>Package</h4>
+
+<p>
+
+Prepared inventory is packaged and organized for shipment.
+
+</p>
+
+</div>
 
 </div>
 
@@ -953,30 +1226,47 @@ the designated Amazon fulfillment location.
 
 </section>
 
-<!-- TRAINING DETAILS -->
+<!-- ==================================================
+     TRAINING
+================================================== -->
 
-<section>
+<section class="service-detail"
+id="training">
 
-<div class="section-heading">
+<div class="detail-container">
+
+<div class="detail-header">
+
+<div class="detail-icon">
+
+<i class="fas fa-graduation-cap"></i>
+
+</div>
 
 <h2>
 
-Amazon Seller Training Programs
+Training
 
 </h2>
 
 <p>
 
-Practical training programs designed for sellers,
-business owners and marketplace teams.
+SAUX.IN provides practical Amazon seller training
+for individuals, business owners and marketplace
+teams who want to understand and manage Amazon
+operations more effectively.
+
+Our training focuses on practical workflows and
+marketplace operations rather than only theoretical
+information.
 
 </p>
 
 </div>
 
-<div class="services-grid">
+<div class="detail-grid">
 
-<div class="service-card">
+<div class="detail-box">
 
 <h3>
 
@@ -984,26 +1274,33 @@ Basic Training Course
 
 </h3>
 
-<p>
+<ul>
 
-Designed for beginners and new Amazon sellers.
+<li>Seller Central navigation</li>
 
-<br><br>
+<li>Basic account operations</li>
 
-✓ Seller Central Navigation<br>
-✓ Listing Fundamentals<br>
-✓ Product Uploading<br>
-✓ Inventory Management<br>
-✓ Order Management<br>
-✓ Returns<br>
-✓ Account Health Basics<br>
-✓ FBA Fundamentals
+<li>Product listing fundamentals</li>
 
-</p>
+<li>Title and bullet-point basics</li>
+
+<li>Product description fundamentals</li>
+
+<li>Keyword basics</li>
+
+<li>Inventory and SKU management</li>
+
+<li>Order and return management</li>
+
+<li>Account Health fundamentals</li>
+
+<li>FBA fundamentals</li>
+
+</ul>
 
 </div>
 
-<div class="service-card">
+<div class="detail-box">
 
 <h3>
 
@@ -1011,22 +1308,71 @@ Advanced Training Course
 
 </h3>
 
+<ul>
+
+<li>Advanced listing optimization</li>
+
+<li>Keyword research and optimization</li>
+
+<li>Catalog management</li>
+
+<li>Account Health management</li>
+
+<li>Performance management</li>
+
+<li>Inventory planning</li>
+
+<li>Competitor analysis</li>
+
+<li>Organic growth practices</li>
+
+<li>FBA workflows</li>
+
+<li>Advertising fundamentals</li>
+
+</ul>
+
+</div>
+
+<div class="detail-box">
+
+<h3>
+
+Training Benefits
+
+</h3>
+
+<ul>
+
+<li>Better understanding of Seller Central</li>
+
+<li>Practical marketplace knowledge</li>
+
+<li>Improved operational confidence</li>
+
+<li>Better understanding of account workflows</li>
+
+<li>Structured learning for seller operations</li>
+
+</ul>
+
+</div>
+
+<div class="detail-box">
+
+<h3>
+
+Our Expertise
+
+</h3>
+
 <p>
 
-Designed for sellers and teams with existing
-marketplace experience.
-
-<br><br>
-
-✓ Advanced Listing Optimization<br>
-✓ Keyword Research<br>
-✓ Catalog Management<br>
-✓ Account Health<br>
-✓ Performance Management<br>
-✓ Inventory Planning<br>
-✓ Competitor Analysis<br>
-✓ Organic Growth<br>
-✓ Advertising Fundamentals
+Our training is based on practical experience with
+Amazon marketplace operations including listings,
+catalog management, inventory, account performance,
+Seller Central workflows and day-to-day seller
+activities.
 
 </p>
 
@@ -1034,110 +1380,152 @@ marketplace experience.
 
 </div>
 
+<div class="process-grid">
+
+<div class="process-card">
+
+<div class="process-number">01</div>
+
+<h4>Understand</h4>
+
+<p>
+
+Understand the learner's current Amazon knowledge.
+
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-number">02</div>
+
+<h4>Teach</h4>
+
+<p>
+
+Explain the relevant Amazon workflows and concepts.
+
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-number">03</div>
+
+<h4>Demonstrate</h4>
+
+<p>
+
+Use practical examples to explain marketplace operations.
+
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-number">04</div>
+
+<h4>Guide</h4>
+
+<p>
+
+Provide structured guidance for applying the knowledge.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- ADVERTISING DETAILS -->
+<!-- ==================================================
+     OUR EXPERTISE
+================================================== -->
 
-<section>
+<section class="evidence-section">
 
-<div class="section-heading">
+<div class="evidence-container">
 
 <h2>
 
-Advertising Optimization
+Our Expertise
 
 </h2>
 
 <p>
 
-Amazon advertising support focused on campaign
-structure, monitoring and ongoing optimization.
+SAUX.IN specializes in practical Amazon marketplace
+support. Our team works across account operations,
+product presentation, FBA preparation and seller
+training.
 
 </p>
 
-</div>
+<div class="evidence-grid">
 
-<div class="services-grid">
+<div class="evidence-card">
 
-<div class="service-card">
+<i class="fas fa-user-tie"></i>
 
 <h3>
 
-Sponsored Products
+Marketplace Operations
 
 </h3>
 
 <p>
 
-✓ Campaign Management<br>
-✓ Keyword Targeting<br>
-✓ Search-Term Analysis<br>
-✓ Bid Optimization<br>
-✓ Budget Monitoring<br>
-✓ Performance Tracking
+Practical experience with Amazon Seller Central
+workflows, account operations, catalog activities
+and marketplace processes.
 
 </p>
 
 </div>
 
-<div class="service-card">
+<div class="evidence-card">
+
+<i class="fas fa-image"></i>
 
 <h3>
 
-Sponsored Brands
+Product Content
 
 </h3>
 
 <p>
 
-✓ Campaign Support<br>
-✓ Keyword Management<br>
-✓ Bid Optimization<br>
-✓ Budget Monitoring<br>
-✓ Performance Analysis
+Experience supporting product images, visual content
+and marketplace-ready product presentation.
 
 </p>
 
 </div>
 
-<div class="service-card">
+<div class="evidence-card">
+
+<i class="fas fa-box"></i>
 
 <h3>
 
-Brand Store Creation & Management
+FBA Operations
 
 </h3>
 
 <p>
 
-✓ Store Structure<br>
-✓ Store Page Creation<br>
-✓ Product Organization<br>
-✓ Content Updates<br>
-✓ Store Management<br>
-✓ Brand Presentation
+Experience with inventory preparation, labeling,
+packaging and shipment-readiness workflows.
 
 </p>
 
 </div>
-
-<div class="service-card">
-
-<h3>
-
-Sponsored Products Lite
-
-</h3>
-
-<p>
-
-✓ Campaign Setup Support<br>
-✓ Keyword Management<br>
-✓ Bid Monitoring<br>
-✓ Budget Monitoring<br>
-✓ Performance Tracking
-
-</p>
 
 </div>
 
@@ -1145,272 +1533,13 @@ Sponsored Products Lite
 
 </section>
 
-<!-- OTHER ECOMMERCE SERVICES -->
+<!-- ==================================================
+     SUCCESS STORIES
+================================================== -->
 
-<section>
+<section class="evidence-section">
 
-<div class="section-heading">
-
-<h2>
-
-Other eCommerce Marketplace Services
-
-</h2>
-
-<p>
-
-Additional marketplace and business support services
-provided by SAUX.IN.
-
-</p>
-
-</div>
-
-<div class="services-grid">
-
-<div class="service-card">
-
-<img src="assets/flipkart.png"
-alt="Flipkart"
-style="height:70px;margin-bottom:20px;">
-
-<h3>
-
-Flipkart Seller Services
-
-</h3>
-
-<p>
-
-✓ Seller Onboarding<br>
-✓ Catalog Management<br>
-✓ Product Listings<br>
-✓ Flipkart Ads<br>
-✓ Performance Support<br>
-✓ Sales Optimization
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<img src="assets/meesho.png"
-alt="Meesho"
-style="height:70px;margin-bottom:20px;">
-
-<h3>
-
-Meesho Supplier Services
-
-</h3>
-
-<p>
-
-✓ Supplier Registration<br>
-✓ Product Uploading<br>
-✓ Catalog Management<br>
-✓ Sales Optimization<br>
-✓ Supplier Growth Support
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<img src="assets/myntra.png"
-alt="Myntra"
-style="height:70px;margin-bottom:20px;">
-
-<h3>
-
-Myntra Management
-
-</h3>
-
-<p>
-
-✓ Brand Onboarding<br>
-✓ Catalog Support<br>
-✓ Product Management<br>
-✓ Performance Monitoring<br>
-✓ Marketplace Growth
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<img src="assets/ajio.png"
-alt="Ajio"
-style="height:70px;margin-bottom:20px;">
-
-<h3>
-
-AJIO Marketplace Support
-
-</h3>
-
-<p>
-
-✓ Brand Setup<br>
-✓ Product Listings<br>
-✓ Catalog Management<br>
-✓ Seller Operations<br>
-✓ Marketplace Growth
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<img src="assets/shopify.png"
-alt="Shopify"
-style="height:70px;margin-bottom:20px;">
-
-<h3>
-
-Shopify Store Management
-
-</h3>
-
-<p>
-
-✓ Store Setup<br>
-✓ Product Uploading<br>
-✓ SEO Optimization<br>
-✓ Store Management<br>
-✓ Conversion Improvement
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- BUSINESS REGISTRATION -->
-
-<section>
-
-<div class="section-heading">
-
-<h2>
-
-Business Registration Services
-
-</h2>
-
-<p>
-
-Registration and documentation support for businesses,
-startups and eCommerce sellers.
-
-</p>
-
-</div>
-
-<div class="services-grid">
-
-<div class="service-card">
-
-<h3>GST Registration</h3>
-
-<p>
-
-✓ New GST Registration<br>
-✓ GST Amendments<br>
-✓ GST Compliance Support<br>
-✓ GST Guidance
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>MSME Registration</h3>
-
-<p>
-
-✓ Udyam Registration<br>
-✓ Documentation Support<br>
-✓ MSME Benefits Guidance
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>Trademark Registration</h3>
-
-<p>
-
-✓ Trademark Filing Support<br>
-✓ Brand Protection Support<br>
-✓ Trademark Monitoring
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>IEC Registration</h3>
-
-<p>
-
-✓ Import Export Code<br>
-✓ DGFT Registration<br>
-✓ Documentation Support
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>FSSAI Registration</h3>
-
-<p>
-
-✓ Food License Registration<br>
-✓ Compliance Guidance<br>
-✓ Renewal Support
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>Company Registration</h3>
-
-<p>
-
-✓ Proprietorship<br>
-✓ Partnership<br>
-✓ LLP Registration<br>
-✓ Private Limited Registration
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SUCCESS STORIES -->
-
-<section>
-
-<div class="section-heading">
+<div class="evidence-container">
 
 <h2>
 
@@ -1420,111 +1549,72 @@ Success Stories & Work Experience
 
 <p>
 
-Examples of marketplace work completed by our team.
-Results and client information are presented based on
-actual completed work and available client permissions.
+We provide marketplace services based on practical
+project experience. This section should contain
+genuine client projects, work samples and measurable
+results where supporting information is available.
 
 </p>
 
-</div>
+<div class="evidence-grid">
 
-<div class="services-grid">
+<div class="evidence-card">
 
-<div class="service-card">
+<i class="fas fa-chart-line"></i>
 
 <h3>
 
-Amazon Account Management
+Account Management Projects
 
 </h3>
 
 <p>
 
-Our team has supported sellers with account monitoring,
-listing optimization, inventory management, performance
-tracking and ongoing marketplace operations.
-
-<br><br>
-
-<strong>Services Delivered:</strong><br>
-
-Account Management • Listing Optimization •
-Performance Monitoring • Inventory Support
+Examples of genuine account-management work including
+performance monitoring, listing support, inventory
+management and operational improvements.
 
 </p>
 
 </div>
 
-<div class="service-card">
+<div class="evidence-card">
+
+<i class="fas fa-camera"></i>
 
 <h3>
 
-Amazon Catalog & Listing Work
+Imaging Projects
 
 </h3>
 
 <p>
 
-We have worked on product catalog creation, listing
-optimization, keyword updates, product descriptions,
-attributes and marketplace content.
-
-<br><br>
-
-<strong>Services Delivered:</strong><br>
-
-Cataloging • SEO Content • Keywords • Product Information
+Examples of genuine product image editing, product
+photography, model photography or 3D modeling projects.
 
 </p>
 
 </div>
 
-<div class="service-card">
+<div class="evidence-card">
+
+<i class="fas fa-graduation-cap"></i>
 
 <h3>
 
-Product Imaging
+Training Experience
 
 </h3>
 
 <p>
 
-Our imaging work includes product image editing,
-marketplace image preparation, feature graphics and
-visual product presentation.
-
-<br><br>
-
-<strong>Services Delivered:</strong><br>
-
-Image Editing • Product Visuals • Infographics •
-Marketplace Image Preparation
+Examples of genuine seller or team training projects,
+including the topics covered and the outcomes achieved.
 
 </p>
 
 </div>
-
-<div class="service-card">
-
-<h3>
-
-Seller Training & Operational Support
-
-</h3>
-
-<p>
-
-Our team provides practical guidance covering Seller
-Central operations, listings, inventory, account health,
-catalog management and marketplace workflows.
-
-<br><br>
-
-<strong>Services Delivered:</strong><br>
-
-Basic Training • Advanced Training • Operational Guidance
-
-</p>
 
 </div>
 
@@ -1532,9 +1622,11 @@ Basic Training • Advanced Training • Operational Guidance
 
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- ==================================================
+     TESTIMONIALS
+================================================== -->
 
-<section class="reviews-section">
+<section class="testimonials">
 
 <div class="section-heading">
 
@@ -1546,85 +1638,96 @@ Client Testimonials
 
 <p>
 
-Feedback from sellers and businesses who have worked
-with SAUX.IN.
+Feedback from clients who have worked with SAUX.IN.
 
 </p>
 
 </div>
 
-<div class="review-grid">
+<div class="testimonial-grid">
 
-<div class="review-card">
+<div class="testimonial-card">
 
-<p>
+<div class="testimonial-stars">
 
 ⭐⭐⭐⭐⭐
 
-Professional support for Amazon account management,
-listing work and marketplace operations.
+</div>
+
+<p>
+
+[Add a genuine client testimonial describing the
+Amazon service provided and the client's experience.]
 
 </p>
 
 <h4>
 
-Rohit Sharma
+[Client Name]
 
 </h4>
 
 <span>
 
-Amazon Seller
+[Business / Amazon Seller]
 
 </span>
 
 </div>
 
-<div class="review-card">
+<div class="testimonial-card">
 
-<p>
+<div class="testimonial-stars">
 
 ⭐⭐⭐⭐⭐
 
-The team provided structured marketplace support and
-helped us manage our product listings and operations.
+</div>
+
+<p>
+
+[Add a genuine testimonial related to account
+management, imaging, FBA preparation or training.]
 
 </p>
 
 <h4>
 
-Priya Textiles
+[Client Name]
 
 </h4>
 
 <span>
 
-Marketplace Brand
+[Business / Amazon Seller]
 
 </span>
 
 </div>
 
-<div class="review-card">
+<div class="testimonial-card">
 
-<p>
+<div class="testimonial-stars">
 
 ⭐⭐⭐⭐⭐
 
-Good experience with catalog management, product
-listings and seller operations.
+</div>
+
+<p>
+
+[Add another genuine client testimonial with
+permission from the client.]
 
 </p>
 
 <h4>
 
-Fashion Hub
+[Client Name]
 
 </h4>
 
 <span>
 
-Online Seller
+[Business / Amazon Seller]
 
 </span>
 
@@ -1634,259 +1737,37 @@ Online Seller
 
 </section>
 
-<!-- OUR EXPERTISE -->
+<!-- ==================================================
+     CTA
+================================================== -->
 
-<section>
-
-<div class="section-heading">
+<section class="amazon-cta">
 
 <h2>
 
-Our Expertise
+Need Amazon Seller Support?
 
 </h2>
 
 <p>
 
-Practical marketplace experience supporting sellers
-across multiple areas of eCommerce operations.
-
-</p>
-
-</div>
-
-<div class="services-grid">
-
-<div class="service-card">
-
-<h3>
-
-Marketplace Operations
-
-</h3>
-
-<p>
-
-Practical experience in Seller Central workflows,
-catalog management, listing operations, inventory
-monitoring and seller support processes.
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Listing & Catalog Expertise
-
-</h3>
-
-<p>
-
-Experience with product titles, descriptions, bullet
-points, keywords, attributes, catalog updates and
-product content optimization.
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Growth & Performance
-
-</h3>
-
-<p>
-
-Experience in monitoring marketplace performance,
-identifying operational issues and implementing
-structured optimization activities.
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Visual & Content Services
-
-</h3>
-
-<p>
-
-Experience supporting product imaging, A+ content,
-product visuals and marketplace-ready content.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FAQ -->
-
-<section>
-
-<div class="section-heading">
-
-<h2>
-
-Frequently Asked Questions
-
-</h2>
-
-</div>
-
-<div class="services-grid">
-
-<div class="service-card">
-
-<h3>
-
-What Amazon services does SAUX.IN provide?
-
-</h3>
-
-<p>
-
-We provide Account Management, Cataloging, Enhanced
-Brand services, Imaging, FBA Prep & Packaging, Seller
-Training and Advertising Optimization services.
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Do you provide Amazon account management?
-
-</h3>
-
-<p>
-
-Yes. Our account management services cover day-to-day
-marketplace operations, performance monitoring, listings,
-inventory and other agreed operational activities.
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Do you provide product imaging?
-
-</h3>
-
-<p>
-
-Yes. Our imaging services include image editing,
-product photography, model photography and 3D product
-modeling, depending on the project requirements.
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Do you provide FBA preparation?
-
-</h3>
-
-<p>
-
-Yes. We provide FBA preparation and packaging support
-for applicable inventory, including labeling, packaging,
-bundling and shipment preparation services.
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Do you provide seller training?
-
-</h3>
-
-<p>
-
-Yes. We provide both Basic and Advanced Amazon Seller
-Training covering Seller Central operations, listings,
-inventory, account health and marketplace workflows.
-
-</p>
-
-</div>
-
-<div class="service-card">
-
-<h3>
-
-Do you provide advertising optimization?
-
-</h3>
-
-<p>
-
-Yes. Our advertising services include Sponsored Products,
-Sponsored Brands, Brand Store Creation & Management and
-Sponsored Products Lite.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA -->
-
-<section class="cta-section">
-
-<h2>
-
-Ready To Grow Your Business?
-
-</h2>
-
-<p>
-
-Talk to SAUX.IN about your Amazon and eCommerce
-marketplace requirements.
+Talk to SAUX.IN about Account Management, Imaging,
+FBA Prep & Packaging or Amazon Seller Training.
 
 </p>
 
 <a href="enquiry.html"
 class="btn">
 
-Send Enquiry
+Contact SAUX.IN
 
 </a>
 
 </section>
 
-<!-- FOOTER -->
+<!-- ==================================================
+     FOOTER
+================================================== -->
 
 <footer>
 
@@ -1902,7 +1783,7 @@ SAUX.IN
 
 <p>
 
-Professional eCommerce Growth Ecosystem
+Amazon Marketplace Service Provider
 
 </p>
 
@@ -1969,42 +1850,6 @@ class="call-float">
 <i class="fas fa-phone"></i>
 
 </a>
-
-<!-- BASIC SECURITY -->
-
-<script>
-
-document.addEventListener(
-"contextmenu",
-event => event.preventDefault()
-);
-
-document.onkeydown = function(e){
-
-if(e.keyCode == 123){
-
-return false;
-
-}
-
-if(e.ctrlKey &&
-e.shiftKey &&
-e.keyCode == 'I'.charCodeAt(0)){
-
-return false;
-
-}
-
-if(e.ctrlKey &&
-e.keyCode == 'U'.charCodeAt(0)){
-
-return false;
-
-}
-
-}
-
-</script>
 
 </body>
 
