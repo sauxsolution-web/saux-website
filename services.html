@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Amazon Services | SAUX SOLUTION</title>
-    <meta name="description" content="SAUX SOLUTION provides professional Amazon Account Management, Imaging, FBA Prep & Packaging, Training and marketplace support services.">
+
+    <meta name="description"
+          content="SAUX SOLUTION provides professional Amazon Account Management, Imaging, FBA Prep & Packaging, Training and marketplace support services for sellers.">
 
     <link rel="stylesheet" href="css/style.css?v=10">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -36,7 +41,10 @@
             text-decoration: none;
         }
 
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================= */
+
         .site-header {
             position: sticky;
             top: 0;
@@ -94,11 +102,22 @@
             border-radius: 8px;
         }
 
-        /* HERO */
+        .nav-btn:hover {
+            background: #e88900;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
             background:
-                radial-gradient(circle at top right, rgba(255,153,0,.15), transparent 35%),
+                radial-gradient(circle at top right,
+                rgba(255,153,0,.15),
+                transparent 35%),
                 linear-gradient(135deg, #101828, #1d2939);
+
             color: white;
             padding: 90px 22px;
             overflow: hidden;
@@ -107,8 +126,10 @@
         .hero-container {
             max-width: 1200px;
             margin: auto;
+
             display: grid;
             grid-template-columns: 1.1fr .9fr;
+
             gap: 60px;
             align-items: center;
         }
@@ -117,10 +138,13 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+
             background: rgba(255,255,255,.09);
             border: 1px solid rgba(255,255,255,.15);
+
             padding: 8px 14px;
             border-radius: 50px;
+
             font-size: 13px;
             margin-bottom: 20px;
         }
@@ -153,10 +177,13 @@
         .btn {
             padding: 13px 22px;
             border-radius: 8px;
+
             font-weight: 600;
+
             display: inline-flex;
             align-items: center;
             gap: 9px;
+
             transition: .25s;
         }
 
@@ -179,6 +206,9 @@
             background: rgba(255,255,255,.08);
         }
 
+
+        /* HERO VISUAL */
+
         .hero-visual {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -187,10 +217,20 @@
 
         .hero-box {
             padding: 25px 18px;
+
             border-radius: 16px;
+
             background: rgba(255,255,255,.08);
             border: 1px solid rgba(255,255,255,.1);
+
             text-align: center;
+
+            transition: .3s;
+        }
+
+        .hero-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,.12);
         }
 
         .hero-box i {
@@ -209,7 +249,11 @@
             margin: 8px 0 0;
         }
 
-        /* COMMON */
+
+        /* =========================
+           COMMON
+        ========================= */
+
         .section {
             padding: 85px 22px;
         }
@@ -227,8 +271,10 @@
 
         .section-heading .tag {
             color: #ff9900;
+
             font-weight: 700;
             text-transform: uppercase;
+
             font-size: 12px;
             letter-spacing: 1.5px;
         }
@@ -244,7 +290,11 @@
             line-height: 1.8;
         }
 
-        /* SERVICE CARDS */
+
+        /* =========================
+           SERVICE CARDS
+        ========================= */
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -253,30 +303,64 @@
 
         .service-card {
             background: #fff;
+
             border: 1px solid #e7ebf0;
             border-radius: 18px;
+
             padding: 28px;
+
             transition: .3s;
+
             position: relative;
             overflow: hidden;
         }
 
+        .service-card::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background: #ff9900;
+
+            transform: scaleX(0);
+            transform-origin: left;
+
+            transition: .3s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
         .service-card:hover {
             transform: translateY(-7px);
-            box-shadow: 0 18px 45px rgba(16,24,40,.10);
+
+            box-shadow:
+                0 18px 45px rgba(16,24,40,.10);
+
             border-color: #ff9900;
         }
 
         .service-icon {
             width: 58px;
             height: 58px;
+
             border-radius: 14px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             background: #fff4e5;
             color: #ff9900;
+
             font-size: 24px;
+
             margin-bottom: 20px;
         }
 
@@ -289,47 +373,89 @@
             color: #667085;
             font-size: 13px;
             line-height: 1.7;
+
+            min-height: 68px;
         }
 
         .service-link {
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            margin-top: 12px;
+
+            margin-top: 15px;
+
             color: #ff9900;
+
             font-size: 13px;
             font-weight: 700;
+
+            transition: .25s;
         }
 
-        /* DETAIL SECTION */
+        .service-link i {
+            transition: .25s;
+        }
+
+        .service-card:hover .service-link i {
+            transform: translateX(5px);
+        }
+
+
+        /* =========================
+           DETAIL SECTION
+        ========================= */
+
         .detail-section {
             padding: 90px 22px;
+
             background: #fff;
+
             border-top: 1px solid #edf0f4;
+
+            scroll-margin-top: 90px;
         }
 
-        .detail-section:nth-child(even) {
+        #services {
+            scroll-margin-top: 90px;
+        }
+
+        #account-management,
+        #imaging,
+        #fba-prep,
+        #training {
+            scroll-margin-top: 90px;
+        }
+
+        .detail-section:nth-of-type(even) {
             background: #f7f9fc;
         }
 
         .detail-header {
             display: grid;
+
             grid-template-columns: .8fr 1.2fr;
+
             gap: 55px;
+
             align-items: center;
+
             margin-bottom: 45px;
         }
 
         .detail-number {
             font-size: 90px;
+
             line-height: 1;
+
             font-weight: 800;
+
             color: rgba(255,153,0,.13);
         }
 
         .detail-title h2 {
             font-size: 38px;
             margin: 0 0 12px;
+            color: #101828;
         }
 
         .detail-title p {
@@ -337,24 +463,44 @@
             line-height: 1.8;
         }
 
+
+        /* DETAIL COLUMNS */
+
         .detail-columns {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 22px;
         }
 
         .detail-box {
             background: #fff;
+
             border: 1px solid #e7ebf0;
+
             border-radius: 15px;
+
             padding: 25px;
+
+            transition: .25s;
+        }
+
+        .detail-box:hover {
+            border-color: #ff9900;
+
+            box-shadow:
+                0 10px 30px rgba(16,24,40,.07);
         }
 
         .detail-box h3 {
             margin: 0 0 17px;
+
             font-size: 17px;
+
             display: flex;
             align-items: center;
+
             gap: 9px;
         }
 
@@ -365,52 +511,83 @@
         .detail-box ul {
             padding: 0;
             margin: 0;
+
             list-style: none;
         }
 
         .detail-box li {
             position: relative;
+
             padding-left: 22px;
+
             margin-bottom: 11px;
+
             color: #667085;
+
             font-size: 13px;
+
             line-height: 1.6;
         }
 
         .detail-box li::before {
             content: "✓";
+
             position: absolute;
+
             left: 0;
+
             color: #ff9900;
+
             font-weight: 700;
         }
 
-        /* FULL WIDTH OFFERINGS */
+
+        /* =========================
+           OFFERINGS
+        ========================= */
+
         .offerings {
             margin-top: 25px;
+
             background: #101828;
+
             color: white;
+
             border-radius: 18px;
+
             padding: 30px;
         }
 
         .offerings h3 {
             margin-top: 0;
+
             font-size: 20px;
         }
 
         .offering-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 12px;
         }
 
         .offering {
             padding: 13px 15px;
+
             border-radius: 9px;
+
             background: rgba(255,255,255,.07);
+
             font-size: 13px;
+
             color: #e4e7ec;
+
+            transition: .25s;
+        }
+
+        .offering:hover {
+            background: rgba(255,153,0,.12);
         }
 
         .offering i {
@@ -418,7 +595,11 @@
             margin-right: 7px;
         }
 
-        /* PROCESS */
+
+        /* =========================
+           PROCESS
+        ========================= */
+
         .process {
             background: #101828;
             color: white;
@@ -434,24 +615,32 @@
 
         .process-grid {
             display: grid;
+
             grid-template-columns: repeat(5, 1fr);
+
             gap: 15px;
         }
 
         .process-card {
             text-align: center;
+
             padding: 25px 15px;
         }
 
         .process-number {
             width: 48px;
             height: 48px;
+
             margin: auto auto 15px;
+
             border-radius: 50%;
+
             background: #ff9900;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             font-weight: 800;
         }
 
@@ -461,60 +650,110 @@
 
         .process-card p {
             font-size: 12px;
+
             color: #98a2b3;
+
             line-height: 1.6;
         }
 
-        /* EXPERTISE */
+
+        /* =========================
+           EXPERTISE
+        ========================= */
+
         .expertise-grid {
             display: grid;
+
             grid-template-columns: repeat(4, 1fr);
+
             gap: 18px;
         }
 
         .expertise-card {
             background: white;
+
             border: 1px solid #e7ebf0;
+
             padding: 25px;
+
             border-radius: 15px;
+
+            transition: .25s;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #ff9900;
+
+            box-shadow:
+                0 12px 35px rgba(16,24,40,.08);
         }
 
         .expertise-card i {
             font-size: 25px;
+
             color: #ff9900;
+
             margin-bottom: 15px;
         }
 
         .expertise-card h3 {
             margin: 0 0 8px;
+
             font-size: 16px;
         }
 
         .expertise-card p {
             color: #667085;
+
             font-size: 12px;
+
             line-height: 1.7;
         }
 
-        /* SUCCESS STORIES */
+
+        /* =========================
+           SUCCESS STORIES
+        ========================= */
+
         .stories-grid,
         .testimonial-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 22px;
         }
 
         .story-card,
         .testimonial {
             background: white;
+
             border: 1px solid #e7ebf0;
+
             border-radius: 16px;
+
             padding: 28px;
+
+            transition: .25s;
+        }
+
+        .story-card:hover,
+        .testimonial:hover {
+            transform: translateY(-5px);
+
+            border-color: #ff9900;
+
+            box-shadow:
+                0 12px 35px rgba(16,24,40,.08);
         }
 
         .story-icon {
             font-size: 28px;
+
             color: #ff9900;
+
             margin-bottom: 15px;
         }
 
@@ -526,9 +765,34 @@
         .story-card p,
         .testimonial p {
             color: #667085;
+
             font-size: 13px;
+
             line-height: 1.8;
         }
+
+        .story-label {
+            display: inline-block;
+
+            margin-bottom: 12px;
+
+            padding: 5px 10px;
+
+            background: #fff4e5;
+
+            color: #ff9900;
+
+            border-radius: 30px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           TESTIMONIALS
+        ========================= */
 
         .testimonial {
             position: relative;
@@ -536,7 +800,9 @@
 
         .testimonial .quote {
             color: #ff9900;
+
             font-size: 25px;
+
             margin-bottom: 10px;
         }
 
@@ -544,62 +810,97 @@
             color: #98a2b3;
         }
 
-        /* CTA */
+
+        /* =========================
+           CTA
+        ========================= */
+
         .cta {
             padding: 80px 22px;
-            background: linear-gradient(135deg, #ff9900, #ffb52e);
+
+            background:
+                linear-gradient(135deg,
+                #ff9900,
+                #ffb52e);
         }
 
         .cta-inner {
             max-width: 950px;
+
             margin: auto;
+
             text-align: center;
+
             color: white;
         }
 
         .cta h2 {
             font-size: 40px;
+
             margin: 0 0 15px;
         }
 
         .cta p {
             margin: 0 auto 28px;
+
             max-width: 700px;
+
             line-height: 1.8;
         }
 
         .cta .btn {
             background: #101828;
+
             color: white;
         }
 
-        /* FOOTER */
+        .cta .btn:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             background: #101828;
+
             color: white;
+
             padding: 50px 22px 25px;
         }
 
         .footer-grid {
             max-width: 1200px;
+
             margin: auto;
+
             display: grid;
+
             grid-template-columns: 1.5fr 1fr 1fr;
+
             gap: 50px;
         }
 
         .footer-brand {
             display: flex;
+
             align-items: center;
+
             gap: 12px;
+
             font-size: 20px;
+
             font-weight: 800;
+
             margin-bottom: 15px;
         }
 
         .footer-brand img {
             width: 45px;
             height: 45px;
+
             object-fit: contain;
         }
 
@@ -607,18 +908,23 @@
         footer li,
         footer a {
             color: #98a2b3;
+
             font-size: 13px;
+
             line-height: 1.8;
         }
 
         footer h3 {
             margin-top: 0;
+
             font-size: 16px;
         }
 
         footer ul {
             list-style: none;
+
             padding: 0;
+
             margin: 0;
         }
 
@@ -632,16 +938,28 @@
 
         .footer-bottom {
             max-width: 1200px;
+
             margin: 35px auto 0;
+
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,.1);
+
+            border-top:
+                1px solid rgba(255,255,255,.1);
+
             text-align: center;
+
             color: #667085;
+
             font-size: 12px;
         }
 
-        /* RESPONSIVE */
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
         @media(max-width: 1000px) {
+
             .services-grid,
             .expertise-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -659,9 +977,12 @@
             .process-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+
         }
 
+
         @media(max-width: 700px) {
+
             .nav {
                 display: none;
             }
@@ -691,103 +1012,195 @@
                 font-size: 30px;
             }
 
+            .hero h1 {
+                font-size: 40px;
+            }
+
             .hero-visual {
                 grid-template-columns: 1fr 1fr;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
+
                 gap: 25px;
             }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="site-header">
+
     <div class="header-container">
 
         <a href="index.html" class="brand">
-            <img src="assets/logo.png" alt="SAUX SOLUTION Logo">
+
+            <img src="assets/logo.png"
+                 alt="SAUX SOLUTION Logo">
+
             <span>SAUX SOLUTION</span>
+
         </a>
 
+
         <nav class="nav">
+
             <a href="index.html">Home</a>
+
             <a href="about.html">About</a>
+
             <a href="services.html">Services</a>
-            <a href="enquiry.html" class="nav-btn">Get Started</a>
+
+            <a href="enquiry.html"
+               class="nav-btn">
+                Get Started
+            </a>
+
         </nav>
 
     </div>
+
 </header>
 
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
     <div class="hero-container">
 
+
         <div>
 
             <div class="hero-badge">
+
                 <i class="fa-brands fa-amazon"></i>
+
                 Amazon Seller Services
+
             </div>
 
-            <h2>
+
+            <h1>
+
                 Grow Your Amazon Business With
+
                 <span>SAUX SOLUTION</span>
-            </h2>
+
+            </h1>
+
 
             <p>
+
                 We provide practical Amazon support services designed to help
                 sellers manage their accounts, improve product presentation,
                 prepare products for FBA and build stronger marketplace skills.
+
             </p>
 
+
             <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">
+
+                <a href="#services"
+                   class="btn btn-primary">
+
                     Explore Services
+
                     <i class="fa-solid fa-arrow-down"></i>
+
                 </a>
 
-                <a href="enquiry.html" class="btn btn-outline">
+
+                <a href="enquiry.html"
+                   class="btn btn-outline">
+
                     Talk To Us
+
                     <i class="fa-solid fa-arrow-right"></i>
+
                 </a>
+
             </div>
 
         </div>
+
 
 
         <div class="hero-visual">
 
+
             <div class="hero-box">
+
                 <i class="fa-solid fa-chart-line"></i>
-                <h3>Account Management</h3>
-                <p>Organized Amazon account support</p>
+
+                <h3>
+                    Account Management
+                </h3>
+
+                <p>
+                    Organized Amazon account support
+                </p>
+
             </div>
 
+
             <div class="hero-box">
+
                 <i class="fa-solid fa-camera"></i>
-                <h3>Imaging</h3>
-                <p>Professional product presentation</p>
+
+                <h3>
+                    Imaging
+                </h3>
+
+                <p>
+                    Professional product presentation
+                </p>
+
             </div>
 
+
             <div class="hero-box">
+
                 <i class="fa-solid fa-box"></i>
-                <h3>FBA Prep</h3>
-                <p>Preparation and packaging support</p>
+
+                <h3>
+                    FBA Prep
+                </h3>
+
+                <p>
+                    Preparation and packaging support
+                </p>
+
             </div>
 
+
             <div class="hero-box">
+
                 <i class="fa-solid fa-graduation-cap"></i>
-                <h3>Training</h3>
-                <p>Practical Amazon learning</p>
+
+                <h3>
+                    Training
+                </h3>
+
+                <p>
+                    Practical Amazon learning
+                </p>
+
             </div>
+
 
         </div>
 
@@ -796,105 +1209,191 @@
 </section>
 
 
-<!-- SERVICES -->
-<section class="section" id="services">
+
+<!-- =========================
+     SERVICES OVERVIEW
+========================= -->
+
+<section class="section"
+         id="services">
 
     <div class="container">
 
+
         <div class="section-heading">
-            <div class="tag">Our Services</div>
-            <h2>Amazon Services We Provide</h2>
+
+            <div class="tag">
+                Our Services
+            </div>
+
+            <h2>
+                Amazon Services We Provide
+            </h2>
+
             <p>
-                Select a service below to understand what SAUX SOLUTION
-                provides and how it can support your Amazon business.
+
+                Explore our core Amazon services and understand how
+                SAUX SOLUTION can support different areas of your
+                marketplace business.
+
             </p>
+
         </div>
+
 
 
         <div class="services-grid">
 
-            <a href="#account-management" class="service-card">
+
+            <!-- ACCOUNT MANAGEMENT -->
+
+            <div class="service-card">
 
                 <div class="service-icon">
+
                     <i class="fa-solid fa-chart-line"></i>
+
                 </div>
 
-                <h3>Account Management</h3>
+
+                <h3>
+                    Account Management
+                </h3>
+
 
                 <p>
-                    Complete support for managing and improving your Amazon
-                    seller account and marketplace operations.
+
+                    Complete support for managing Amazon seller accounts,
+                    listings, performance activities and day-to-day
+                    marketplace operations.
+
                 </p>
 
-                <span class="service-link">
-                    View Service
+
+                <a href="#account-management"
+                   class="service-link">
+
+                    Explore Service
+
                     <i class="fa-solid fa-arrow-right"></i>
-                </span>
 
-            </a>
+                </a>
+
+            </div>
 
 
-            <a href="#imaging" class="service-card">
+
+            <!-- IMAGING -->
+
+            <div class="service-card">
 
                 <div class="service-icon">
+
                     <i class="fa-solid fa-camera-retro"></i>
+
                 </div>
 
-                <h3>Imaging</h3>
+
+                <h3>
+                    Imaging
+                </h3>
+
 
                 <p>
-                    Product image editing, photography, model shoots and
-                    3D product modeling for better product presentation.
+
+                    Professional product image editing, photography,
+                    model shoots and 3D presentation services for
+                    marketplace listings.
+
                 </p>
 
-                <span class="service-link">
-                    View Service
+
+                <a href="#imaging"
+                   class="service-link">
+
+                    Explore Service
+
                     <i class="fa-solid fa-arrow-right"></i>
-                </span>
 
-            </a>
+                </a>
+
+            </div>
 
 
-            <a href="#fba-prep" class="service-card">
+
+            <!-- FBA -->
+
+            <div class="service-card">
 
                 <div class="service-icon">
+
                     <i class="fa-solid fa-box-open"></i>
+
                 </div>
 
-                <h3>FBA Prep & Packaging</h3>
+
+                <h3>
+                    FBA Prep & Packaging
+                </h3>
+
 
                 <p>
-                    Product preparation and packaging support before products
-                    are prepared for FBA shipment.
+
+                    Product receiving, inspection, labeling, packaging
+                    and shipment preparation support before FBA dispatch.
+
                 </p>
 
-                <span class="service-link">
-                    View Service
+
+                <a href="#fba-prep"
+                   class="service-link">
+
+                    Explore Service
+
                     <i class="fa-solid fa-arrow-right"></i>
-                </span>
 
-            </a>
+                </a>
+
+            </div>
 
 
-            <a href="#training" class="service-card">
+
+            <!-- TRAINING -->
+
+            <div class="service-card">
 
                 <div class="service-icon">
+
                     <i class="fa-solid fa-graduation-cap"></i>
+
                 </div>
 
-                <h3>Training</h3>
+
+                <h3>
+                    Training
+                </h3>
+
 
                 <p>
-                    Practical Amazon training programs for sellers who want
-                    to understand and manage their marketplace operations.
+
+                    Practical Amazon training designed to help sellers
+                    understand Seller Central and manage marketplace
+                    operations confidently.
+
                 </p>
 
-                <span class="service-link">
-                    View Service
+
+                <a href="#training"
+                   class="service-link">
+
+                    Explore Service
+
                     <i class="fa-solid fa-arrow-right"></i>
-                </span>
 
-            </a>
+                </a>
+
+            </div>
+
 
         </div>
 
@@ -903,81 +1402,215 @@
 </section>
 
 
-<!-- ACCOUNT MANAGEMENT -->
-<section class="detail-section" id="account-management">
+
+<!-- =========================
+     ACCOUNT MANAGEMENT
+========================= -->
+
+<section class="detail-section"
+         id="account-management">
 
     <div class="container">
 
+
         <div class="detail-header">
 
-            <div class="detail-number">01</div>
+            <div class="detail-number">
+                01
+            </div>
+
 
             <div class="detail-title">
-                <h2>Account Management</h2>
+
+                <h2>
+                    Amazon Account Management
+                </h2>
+
 
                 <p>
-                    Our Account Management service focuses on organized,
-                    ongoing support for Amazon seller accounts. We work on
-                    account operations, performance monitoring, catalog
-                    management and improvement activities based on the
-                    seller's requirements.
+
+                    Our Account Management service provides structured
+                    support for Amazon seller accounts. We help manage
+                    marketplace activities, monitor account performance,
+                    maintain listings and identify areas that require
+                    attention or improvement.
+
                 </p>
+
+                <p>
+
+                    The service can be adapted according to the seller's
+                    current account condition, product catalog, operational
+                    requirements and business goals.
+
+                </p>
+
             </div>
 
         </div>
 
 
+
         <div class="detail-columns">
 
+
+            <!-- CORE OFFERINGS -->
+
             <div class="detail-box">
+
                 <h3>
+
                     <i class="fa-solid fa-list-check"></i>
+
                     Core Offerings
+
                 </h3>
 
+
                 <ul>
-                    <li>Complete Account Management</li>
-                    <li>Performance Management</li>
-                    <li>Brand Protection</li>
-                    <li>FBA Upgrade</li>
-                    <li>Performance Management Post-Reinstatement</li>
-                    <li>Easy Ship Prime Upgrade</li>
+
+                    <li>
+                        Complete Amazon Account Management
+                    </li>
+
+                    <li>
+                        Seller Central Operations
+                    </li>
+
+                    <li>
+                        Listing and Catalog Management
+                    </li>
+
+                    <li>
+                        Account Performance Management
+                    </li>
+
+                    <li>
+                        Brand Protection Support
+                    </li>
+
+                    <li>
+                        FBA Account Activities
+                    </li>
+
+                    <li>
+                        Post-Reinstatement Performance Support
+                    </li>
+
+                    <li>
+                        Easy Ship and Prime-related Support
+                    </li>
+
                 </ul>
+
             </div>
 
 
+
+            <!-- BENEFITS -->
+
             <div class="detail-box">
+
                 <h3>
+
                     <i class="fa-solid fa-chart-simple"></i>
+
                     Benefits
+
                 </h3>
 
+
                 <ul>
-                    <li>Better account organization</li>
-                    <li>Regular performance monitoring</li>
-                    <li>Improved operational visibility</li>
-                    <li>Structured account support</li>
-                    <li>Faster identification of account issues</li>
-                    <li>Consistent marketplace management</li>
+
+                    <li>
+                        Better account organization
+                    </li>
+
+                    <li>
+                        Regular performance monitoring
+                    </li>
+
+                    <li>
+                        Improved operational visibility
+                    </li>
+
+                    <li>
+                        Structured marketplace support
+                    </li>
+
+                    <li>
+                        Faster identification of account issues
+                    </li>
+
+                    <li>
+                        Consistent listing management
+                    </li>
+
+                    <li>
+                        Better workflow coordination
+                    </li>
+
+                    <li>
+                        Ongoing improvement planning
+                    </li>
+
                 </ul>
+
             </div>
 
+
+
+            <!-- EXPERTISE -->
 
             <div class="detail-box">
+
                 <h3>
+
                     <i class="fa-solid fa-lightbulb"></i>
+
                     Our Expertise
+
                 </h3>
 
+
                 <ul>
-                    <li>Seller account operations</li>
-                    <li>Catalog and listing management</li>
-                    <li>Performance monitoring</li>
-                    <li>FBA-related account activities</li>
-                    <li>Account improvement planning</li>
-                    <li>Marketplace workflow management</li>
+
+                    <li>
+                        Seller account operations
+                    </li>
+
+                    <li>
+                        Catalog and listing management
+                    </li>
+
+                    <li>
+                        Performance monitoring
+                    </li>
+
+                    <li>
+                        FBA-related account activities
+                    </li>
+
+                    <li>
+                        Account improvement planning
+                    </li>
+
+                    <li>
+                        Marketplace workflow management
+                    </li>
+
+                    <li>
+                        Seller support coordination
+                    </li>
+
+                    <li>
+                        Operational monitoring
+                    </li>
+
                 </ul>
+
             </div>
+
 
         </div>
 
@@ -986,86 +1619,207 @@
 </section>
 
 
-<!-- IMAGING -->
-<section class="detail-section" id="imaging">
+
+<!-- =========================
+     IMAGING
+========================= -->
+
+<section class="detail-section"
+         id="imaging">
 
     <div class="container">
 
+
         <div class="detail-header">
 
-            <div class="detail-number">02</div>
+            <div class="detail-number">
+                02
+            </div>
+
 
             <div class="detail-title">
-                <h2>Imaging</h2>
+
+                <h2>
+                    Amazon Product Imaging
+                </h2>
+
 
                 <p>
-                    Product images are an important part of an Amazon listing.
-                    Our imaging services help sellers create cleaner,
-                    professional and marketplace-ready product visuals.
+
+                    Product images play an important role in marketplace
+                    presentation. Our imaging service helps sellers create
+                    clean, professional and marketplace-ready visuals that
+                    clearly present their products.
+
                 </p>
+
+
+                <p>
+
+                    Services can include image editing, product photography,
+                    lifestyle visuals, model photography and 3D product
+                    presentation depending on the product requirement.
+
+                </p>
+
             </div>
 
         </div>
+
 
 
         <div class="detail-columns">
 
+
+            <!-- IMAGE EDITING -->
+
             <div class="detail-box">
 
                 <h3>
+
                     <i class="fa-solid fa-pen-to-square"></i>
+
                     Image Editing
+
                 </h3>
 
+
                 <ul>
-                    <li>Background removal</li>
-                    <li>White-background image preparation</li>
-                    <li>Image cleanup</li>
-                    <li>Retouching</li>
-                    <li>Lighting and exposure correction</li>
-                    <li>Product image enhancement</li>
-                    <li>Feature graphics</li>
-                    <li>Image resizing and optimization</li>
+
+                    <li>
+                        Background removal
+                    </li>
+
+                    <li>
+                        White-background image preparation
+                    </li>
+
+                    <li>
+                        Image cleanup
+                    </li>
+
+                    <li>
+                        Professional retouching
+                    </li>
+
+                    <li>
+                        Lighting and exposure correction
+                    </li>
+
+                    <li>
+                        Product image enhancement
+                    </li>
+
+                    <li>
+                        Feature graphics
+                    </li>
+
+                    <li>
+                        Image resizing and optimization
+                    </li>
+
                 </ul>
 
             </div>
 
 
+
+            <!-- PHOTO SHOOT -->
+
             <div class="detail-box">
 
                 <h3>
+
                     <i class="fa-solid fa-camera"></i>
+
                     Product Photo Shoot
+
                 </h3>
 
+
                 <ul>
-                    <li>Product photography planning</li>
-                    <li>Product-focused images</li>
-                    <li>Multiple product angles</li>
-                    <li>Detail-focused photography</li>
-                    <li>Lifestyle image concepts</li>
-                    <li>Marketplace-ready image preparation</li>
+
+                    <li>
+                        Product photography planning
+                    </li>
+
+                    <li>
+                        Product-focused photography
+                    </li>
+
+                    <li>
+                        Multiple product angles
+                    </li>
+
+                    <li>
+                        Detail-focused photography
+                    </li>
+
+                    <li>
+                        Lifestyle image concepts
+                    </li>
+
+                    <li>
+                        Product usage presentation
+                    </li>
+
+                    <li>
+                        Marketplace-ready image preparation
+                    </li>
+
                 </ul>
 
             </div>
 
+
+
+            <!-- MODEL & 3D -->
 
             <div class="detail-box">
 
                 <h3>
+
                     <i class="fa-solid fa-user"></i>
+
                     Model & 3D Services
+
                 </h3>
 
+
                 <ul>
-                    <li>Male Model Photo Shoot</li>
-                    <li>Female Model Photo Shoot</li>
-                    <li>3D Product Modeling</li>
-                    <li>Product presentation concepts</li>
-                    <li>Product-focused visual composition</li>
+
+                    <li>
+                        Male Model Photo Shoot
+                    </li>
+
+                    <li>
+                        Female Model Photo Shoot
+                    </li>
+
+                    <li>
+                        Product lifestyle shoots
+                    </li>
+
+                    <li>
+                        3D Product Modeling
+                    </li>
+
+                    <li>
+                        Product presentation concepts
+                    </li>
+
+                    <li>
+                        Product-focused visual composition
+                    </li>
+
+                    <li>
+                        Marketplace image planning
+                    </li>
+
                 </ul>
 
             </div>
+
 
         </div>
 
@@ -1074,144 +1828,291 @@
 </section>
 
 
-<!-- FBA PREP -->
-<section class="detail-section" id="fba-prep">
+
+<!-- =========================
+     FBA PREP
+========================= -->
+
+<section class="detail-section"
+         id="fba-prep">
 
     <div class="container">
 
+
         <div class="detail-header">
 
-            <div class="detail-number">03</div>
+            <div class="detail-number">
+                03
+            </div>
+
 
             <div class="detail-title">
-                <h2>FBA Prep & Packaging</h2>
+
+                <h2>
+                    FBA Prep & Packaging
+                </h2>
+
 
                 <p>
-                    Our FBA Prep & Packaging support helps sellers prepare
-                    products correctly before shipment. The exact preparation
-                    requirements can vary depending on the product type and
-                    applicable Amazon requirements.
+
+                    Our FBA Prep & Packaging service helps sellers prepare
+                    products before shipment. We provide organized preparation,
+                    labeling and packaging support according to the product
+                    requirements and applicable marketplace guidelines.
+
                 </p>
+
+
+                <p>
+
+                    Preparation requirements may vary depending on the product
+                    category, packaging type and shipment requirements.
+
+                </p>
+
             </div>
 
         </div>
 
+
+
+        <!-- PREPARATION SERVICES -->
 
         <div class="offerings">
 
             <h3>
+
                 <i class="fa-solid fa-box"></i>
-                Preparation Services
+
+                FBA Preparation Services
+
             </h3>
+
 
             <div class="offering-grid">
 
+
                 <div class="offering">
+
                     <i class="fa-solid fa-check"></i>
+
                     Product Receiving
+
                 </div>
 
+
                 <div class="offering">
+
                     <i class="fa-solid fa-check"></i>
+
                     Quantity Checking
+
                 </div>
 
+
                 <div class="offering">
+
                     <i class="fa-solid fa-check"></i>
+
                     Product Inspection
+
                 </div>
 
+
                 <div class="offering">
+
                     <i class="fa-solid fa-check"></i>
+
                     FNSKU / Barcode Labeling
+
                 </div>
 
+
                 <div class="offering">
+
                     <i class="fa-solid fa-check"></i>
+
                     Poly-Bagging
+
                 </div>
 
+
                 <div class="offering">
+
                     <i class="fa-solid fa-check"></i>
+
                     Bubble Wrapping
+
                 </div>
 
+
                 <div class="offering">
+
                     <i class="fa-solid fa-check"></i>
+
                     Bundling
+
                 </div>
 
+
                 <div class="offering">
+
                     <i class="fa-solid fa-check"></i>
+
                     Set Preparation
+
                 </div>
 
+
                 <div class="offering">
+
                     <i class="fa-solid fa-check"></i>
+
                     Product Packaging
+
                 </div>
 
+
                 <div class="offering">
+
                     <i class="fa-solid fa-check"></i>
+
                     Shipment Preparation
+
                 </div>
+
 
             </div>
 
         </div>
 
 
-        <div class="detail-columns" style="margin-top:25px;">
+
+        <div class="detail-columns"
+             style="margin-top:25px;">
+
+
+            <!-- BENEFITS -->
 
             <div class="detail-box">
 
                 <h3>
+
                     <i class="fa-solid fa-shield-halved"></i>
+
                     Benefits
+
                 </h3>
 
+
                 <ul>
-                    <li>Organized product preparation</li>
-                    <li>Consistent packaging workflow</li>
-                    <li>Reduced preparation errors</li>
-                    <li>Better shipment readiness</li>
+
+                    <li>
+                        Organized product preparation
+                    </li>
+
+                    <li>
+                        Consistent packaging workflow
+                    </li>
+
+                    <li>
+                        Reduced preparation errors
+                    </li>
+
+                    <li>
+                        Better shipment readiness
+                    </li>
+
+                    <li>
+                        Structured product handling
+                    </li>
+
                 </ul>
 
             </div>
 
 
+
+            <!-- APPROACH -->
+
             <div class="detail-box">
 
                 <h3>
+
                     <i class="fa-solid fa-gears"></i>
+
                     Our Approach
+
                 </h3>
 
+
                 <ul>
-                    <li>Receive products</li>
-                    <li>Check quantity and condition</li>
-                    <li>Complete required preparation</li>
-                    <li>Label and package products</li>
-                    <li>Prepare shipment</li>
+
+                    <li>
+                        Receive products
+                    </li>
+
+                    <li>
+                        Check quantity and condition
+                    </li>
+
+                    <li>
+                        Identify preparation requirements
+                    </li>
+
+                    <li>
+                        Complete required preparation
+                    </li>
+
+                    <li>
+                        Label and package products
+                    </li>
+
+                    <li>
+                        Prepare shipment
+                    </li>
+
                 </ul>
 
             </div>
 
+
+
+            <!-- IMPORTANT -->
 
             <div class="detail-box">
 
                 <h3>
+
                     <i class="fa-solid fa-circle-info"></i>
+
                     Important
+
                 </h3>
 
+
                 <ul>
-                    <li>Preparation depends on product type</li>
-                    <li>Packaging requirements are reviewed before processing</li>
-                    <li>Applicable marketplace requirements are considered</li>
+
+                    <li>
+                        Preparation depends on product type
+                    </li>
+
+                    <li>
+                        Packaging requirements are reviewed before processing
+                    </li>
+
+                    <li>
+                        Product condition is checked during preparation
+                    </li>
+
+                    <li>
+                        Applicable marketplace requirements are considered
+                    </li>
+
                 </ul>
 
             </div>
+
 
         </div>
 
@@ -1220,87 +2121,211 @@
 </section>
 
 
-<!-- TRAINING -->
-<section class="detail-section" id="training">
+
+<!-- =========================
+     TRAINING
+========================= -->
+
+<section class="detail-section"
+         id="training">
 
     <div class="container">
 
+
         <div class="detail-header">
 
-            <div class="detail-number">04</div>
+            <div class="detail-number">
+                04
+            </div>
+
 
             <div class="detail-title">
-                <h2>Training</h2>
+
+                <h2>
+                    Amazon Seller Training
+                </h2>
+
 
                 <p>
-                    Our Amazon training programs are designed to help sellers
-                    understand marketplace operations and confidently manage
-                    their Amazon business.
+
+                    Our Amazon training programs are designed for sellers,
+                    business owners and individuals who want to understand
+                    marketplace operations and manage their Amazon business
+                    more confidently.
+
                 </p>
+
+
+                <p>
+
+                    Training focuses on practical marketplace activities,
+                    Seller Central workflows, listings, inventory,
+                    performance and account management.
+
+                </p>
+
             </div>
 
         </div>
+
 
 
         <div class="detail-columns">
 
+
+            <!-- BASIC -->
+
             <div class="detail-box">
 
                 <h3>
+
                     <i class="fa-solid fa-book"></i>
+
                     Basic Training Course
+
                 </h3>
 
+
                 <ul>
-                    <li>Amazon seller account basics</li>
-                    <li>Seller Central navigation</li>
-                    <li>Product listing fundamentals</li>
-                    <li>Catalog management</li>
-                    <li>Inventory management</li>
-                    <li>Order management</li>
-                    <li>Basic performance understanding</li>
+
+                    <li>
+                        Amazon seller account basics
+                    </li>
+
+                    <li>
+                        Seller Central navigation
+                    </li>
+
+                    <li>
+                        Product listing fundamentals
+                    </li>
+
+                    <li>
+                        Catalog management
+                    </li>
+
+                    <li>
+                        Inventory management
+                    </li>
+
+                    <li>
+                        Order management
+                    </li>
+
+                    <li>
+                        Basic performance understanding
+                    </li>
+
+                    <li>
+                        Seller workflow basics
+                    </li>
+
                 </ul>
 
             </div>
 
 
+
+            <!-- ADVANCED -->
+
             <div class="detail-box">
 
                 <h3>
+
                     <i class="fa-solid fa-graduation-cap"></i>
+
                     Advanced Training Course
+
                 </h3>
 
+
                 <ul>
-                    <li>Advanced account management</li>
-                    <li>Listing optimization</li>
-                    <li>Keyword and SEO strategy</li>
-                    <li>Performance analysis</li>
-                    <li>FBA operations</li>
-                    <li>Account issue handling</li>
-                    <li>Marketplace growth planning</li>
+
+                    <li>
+                        Advanced account management
+                    </li>
+
+                    <li>
+                        Listing optimization
+                    </li>
+
+                    <li>
+                        Keyword and SEO strategy
+                    </li>
+
+                    <li>
+                        Performance analysis
+                    </li>
+
+                    <li>
+                        FBA operations
+                    </li>
+
+                    <li>
+                        Account issue handling
+                    </li>
+
+                    <li>
+                        Marketplace growth planning
+                    </li>
+
+                    <li>
+                        Operational optimization
+                    </li>
+
                 </ul>
 
             </div>
 
+
+
+            <!-- BENEFITS -->
 
             <div class="detail-box">
 
                 <h3>
+
                     <i class="fa-solid fa-user-tie"></i>
+
                     Training Benefits
+
                 </h3>
 
+
                 <ul>
-                    <li>Practical marketplace knowledge</li>
-                    <li>Better understanding of Seller Central</li>
-                    <li>Improved day-to-day account management</li>
-                    <li>Better listing management skills</li>
-                    <li>Structured working approach</li>
-                    <li>More confidence managing operations</li>
+
+                    <li>
+                        Practical marketplace knowledge
+                    </li>
+
+                    <li>
+                        Better understanding of Seller Central
+                    </li>
+
+                    <li>
+                        Improved day-to-day account management
+                    </li>
+
+                    <li>
+                        Better listing management skills
+                    </li>
+
+                    <li>
+                        Structured working approach
+                    </li>
+
+                    <li>
+                        Improved operational understanding
+                    </li>
+
+                    <li>
+                        More confidence managing marketplace activities
+                    </li>
+
                 </ul>
 
             </div>
+
 
         </div>
 
@@ -1309,56 +2334,136 @@
 </section>
 
 
-<!-- PROCESS -->
+
+<!-- =========================
+     PROCESS
+========================= -->
+
 <section class="section process">
 
     <div class="container">
 
+
         <div class="section-heading">
 
-            <div class="tag">Our Approach</div>
+            <div class="tag">
+                Our Approach
+            </div>
 
-            <h2>How We Work</h2>
+
+            <h2>
+                How We Work
+            </h2>
+
 
             <p>
+
                 We follow a structured workflow so every service is handled
-                with clear objectives and regular monitoring.
+                with clear objectives, practical execution and regular
+                monitoring.
+
             </p>
 
         </div>
+
 
 
         <div class="process-grid">
 
-            <div class="process-card">
-                <div class="process-number">01</div>
-                <h3>Understand</h3>
-                <p>Understand the seller's requirements and current situation.</p>
-            </div>
 
             <div class="process-card">
-                <div class="process-number">02</div>
-                <h3>Analyze</h3>
-                <p>Review products, account activities and areas requiring attention.</p>
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+                    Understand the seller's requirements, products,
+                    account condition and current challenges.
+                </p>
+
             </div>
 
-            <div class="process-card">
-                <div class="process-number">03</div>
-                <h3>Plan</h3>
-                <p>Create a practical service approach based on the requirements.</p>
-            </div>
+
 
             <div class="process-card">
-                <div class="process-number">04</div>
-                <h3>Execute</h3>
-                <p>Complete the agreed service activities professionally.</p>
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Analyze
+                </h3>
+
+                <p>
+                    Review account activities, listings, products and
+                    areas requiring attention.
+                </p>
+
             </div>
 
+
+
             <div class="process-card">
-                <div class="process-number">05</div>
-                <h3>Monitor</h3>
-                <p>Review progress and identify opportunities for improvement.</p>
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Plan
+                </h3>
+
+                <p>
+                    Create a practical service approach based on the
+                    seller's requirements and objectives.
+                </p>
+
             </div>
+
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Execute
+                </h3>
+
+                <p>
+                    Complete the agreed service activities with
+                    structured execution.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    05
+                </div>
+
+                <h3>
+                    Monitor
+                </h3>
+
+                <p>
+                    Review progress, identify issues and look for
+                    opportunities for continuous improvement.
+                </p>
+
+            </div>
+
 
         </div>
 
@@ -1367,50 +2472,117 @@
 </section>
 
 
-<!-- EXPERTISE -->
+
+<!-- =========================
+     EXPERTISE
+========================= -->
+
 <section class="section">
 
     <div class="container">
 
+
         <div class="section-heading">
 
-            <div class="tag">Why SAUX SOLUTION</div>
+            <div class="tag">
+                Why SAUX SOLUTION
+            </div>
 
-            <h2>Our Expertise</h2>
+
+            <h2>
+                Our Expertise
+            </h2>
+
 
             <p>
+
                 Our work focuses on practical Amazon marketplace operations,
-                seller support and continuous improvement.
+                seller support, product presentation and continuous
+                improvement.
+
             </p>
 
         </div>
+
 
 
         <div class="expertise-grid">
 
+
             <div class="expertise-card">
+
                 <i class="fa-solid fa-store"></i>
-                <h3>Amazon Operations</h3>
-                <p>Practical experience with day-to-day marketplace activities and seller operations.</p>
+
+                <h3>
+                    Amazon Operations
+                </h3>
+
+                <p>
+
+                    Practical support for day-to-day marketplace activities,
+                    account operations and seller workflows.
+
+                </p>
+
             </div>
 
+
+
             <div class="expertise-card">
+
                 <i class="fa-solid fa-magnifying-glass-chart"></i>
-                <h3>Listing Optimization</h3>
-                <p>Structured product listing improvement, keywords and content optimization.</p>
+
+                <h3>
+                    Listing Optimization
+                </h3>
+
+                <p>
+
+                    Structured product listing improvement including
+                    titles, descriptions, keywords and content.
+
+                </p>
+
             </div>
 
+
+
             <div class="expertise-card">
+
                 <i class="fa-solid fa-boxes-stacked"></i>
-                <h3>FBA Support</h3>
-                <p>Support for FBA preparation and related marketplace workflows.</p>
+
+                <h3>
+                    FBA Support
+                </h3>
+
+                <p>
+
+                    Support for product preparation, packaging and
+                    related FBA marketplace workflows.
+
+                </p>
+
             </div>
 
+
+
             <div class="expertise-card">
+
                 <i class="fa-solid fa-headset"></i>
-                <h3>Seller Support</h3>
-                <p>Organized communication, monitoring and operational assistance for sellers.</p>
+
+                <h3>
+                    Seller Support
+                </h3>
+
+                <p>
+
+                    Organized communication, monitoring and operational
+                    assistance for sellers.
+
+                </p>
+
             </div>
+
 
         </div>
 
@@ -1419,73 +2591,142 @@
 </section>
 
 
-<!-- SUCCESS STORIES -->
-<section class="section" style="background:#f7f9fc;">
+
+<!-- =========================
+     SUCCESS STORIES
+========================= -->
+
+<section class="section"
+         style="background:#f7f9fc;">
 
     <div class="container">
 
+
         <div class="section-heading">
 
-            <div class="tag">Our Experience</div>
+            <div class="tag">
+                Our Experience
+            </div>
 
-            <h2>Success Stories & Work Experience</h2>
+
+            <h2>
+                Success Stories & Work Experience
+            </h2>
+
 
             <p>
-                This section should showcase genuine projects and measurable
-                results achieved through our services.
+
+                Our experience covers different areas of Amazon seller
+                operations, including account management, product
+                presentation and FBA-related activities.
+
             </p>
 
         </div>
+
 
 
         <div class="stories-grid">
 
+
+            <!-- STORY 1 -->
+
             <div class="story-card">
 
                 <div class="story-icon">
+
                     <i class="fa-solid fa-chart-line"></i>
+
                 </div>
 
-                <h3>Account Improvement</h3>
+
+                <span class="story-label">
+                    Account Management
+                </span>
+
+
+                <h3>
+                    Marketplace Account Support
+                </h3>
+
 
                 <p>
-                    Add a genuine client case study here explaining the
-                    challenge, work completed and actual result achieved.
+
+                    We support sellers with day-to-day Amazon account
+                    activities including listing management, performance
+                    monitoring, operational updates and account improvement
+                    activities.
+
                 </p>
 
             </div>
 
 
+
+            <!-- STORY 2 -->
+
             <div class="story-card">
 
                 <div class="story-icon">
+
                     <i class="fa-solid fa-image"></i>
+
                 </div>
 
-                <h3>Product Presentation</h3>
+
+                <span class="story-label">
+                    Product Imaging
+                </span>
+
+
+                <h3>
+                    Product Presentation
+                </h3>
+
 
                 <p>
-                    Add a genuine imaging project showing the product image
-                    challenge, work completed and actual improvement.
+
+                    Our imaging work focuses on improving product presentation
+                    through cleaner product images, professional editing,
+                    photography and marketplace-focused visual content.
+
                 </p>
 
             </div>
 
+
+
+            <!-- STORY 3 -->
 
             <div class="story-card">
 
                 <div class="story-icon">
+
                     <i class="fa-solid fa-box"></i>
+
                 </div>
 
-                <h3>FBA Preparation</h3>
+
+                <span class="story-label">
+                    FBA Support
+                </span>
+
+
+                <h3>
+                    Product Preparation
+                </h3>
+
 
                 <p>
-                    Add a genuine FBA preparation project describing the
-                    preparation work and actual outcome.
+
+                    We assist sellers with product preparation workflows,
+                    including inspection, labeling, packaging and shipment
+                    preparation based on the product requirements.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1494,77 +2735,139 @@
 </section>
 
 
-<!-- TESTIMONIALS -->
+
+<!-- =========================
+     TESTIMONIALS
+========================= -->
+
 <section class="section">
 
     <div class="container">
 
+
         <div class="section-heading">
 
-            <div class="tag">Client Feedback</div>
+            <div class="tag">
+                Client Feedback
+            </div>
 
-            <h2>Client Testimonials</h2>
+
+            <h2>
+                Client Testimonials
+            </h2>
+
 
             <p>
-                Add genuine client feedback here. Testimonials should only be
-                published with the client's permission and should accurately
-                represent their experience.
+
+                Feedback from clients reflects their experience working
+                with SAUX SOLUTION and our marketplace support services.
+
             </p>
 
         </div>
+
 
 
         <div class="testimonial-grid">
 
-            <div class="testimonial">
 
-                <div class="quote">
-                    <i class="fa-solid fa-quote-left"></i>
-                </div>
-
-                <p>
-                    Great service and very professional support. Quick response, smooth process, and really happy with the overall experience. Highly recommended!
-              
-                </p>
-
-                <h3>SAU FLEX</h3>
-                <small>Client / Clothing</small>
-
-            </div>
-
+            <!-- TESTIMONIAL 1 -->
 
             <div class="testimonial">
 
                 <div class="quote">
+
                     <i class="fa-solid fa-quote-left"></i>
+
                 </div>
 
+
                 <p>
-                    Very good service and professional support. Quick response and smooth experience. Really happy with the service!
- 
+
+                    Great service and very professional support.
+                    Quick response, smooth process, and really happy
+                    with the overall experience. Highly recommended!
+
                 </p>
 
-                <h3>SRS TRADERS_</h3>
-                <small>Client / Bags</small>
+
+                <h3>
+                    SAU FLEX
+                </h3>
+
+
+                <small>
+                    Client / Clothing
+                </small>
 
             </div>
 
+
+
+            <!-- TESTIMONIAL 2 -->
 
             <div class="testimonial">
 
                 <div class="quote">
+
                     <i class="fa-solid fa-quote-left"></i>
+
                 </div>
 
+
                 <p>
-                    Excellent service and prompt support. Very cooperative and professional team. Happy with the overall experience!
-               
+
+                    Very good service and professional support.
+                    Quick response and smooth experience. Really happy
+                    with the service!
+
                 </p>
 
-                <h3>AYURBIO</h3>
-                <small>Client / Energy Drink</small>
+
+                <h3>
+                    SRS TRADERS_
+                </h3>
+
+
+                <small>
+                    Client / Bags
+                </small>
 
             </div>
+
+
+
+            <!-- TESTIMONIAL 3 -->
+
+            <div class="testimonial">
+
+                <div class="quote">
+
+                    <i class="fa-solid fa-quote-left"></i>
+
+                </div>
+
+
+                <p>
+
+                    Excellent service and prompt support.
+                    Very cooperative and professional team.
+                    Happy with the overall experience!
+
+                </p>
+
+
+                <h3>
+                    AYURBIO
+                </h3>
+
+
+                <small>
+                    Client / Energy Drink
+                </small>
+
+            </div>
+
 
         </div>
 
@@ -1573,114 +2876,226 @@
 </section>
 
 
-<!-- CTA -->
+
+<!-- =========================
+     CTA
+========================= -->
+
 <section class="cta">
 
     <div class="cta-inner">
 
-        <h2>Ready to Improve Your Amazon Business?</h2>
+
+        <h2>
+            Ready to Improve Your Amazon Business?
+        </h2>
+
 
         <p>
-            Talk to SAUX SOLUTION about your Amazon service requirements and
-            find the right support for your business.
+
+            Talk to SAUX SOLUTION about your Amazon service requirements
+            and find the right support for your business.
+
         </p>
 
-        <a href="enquiry.html" class="btn">
+
+        <a href="enquiry.html"
+           class="btn">
+
             Start Your Enquiry
+
             <i class="fa-solid fa-arrow-right"></i>
+
         </a>
+
 
     </div>
 
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
     <div class="footer-grid">
 
+
+        <!-- BRAND -->
+
         <div>
 
             <div class="footer-brand">
-                <img src="assets/logo.png" alt="SAUX SOLUTION Logo">
-                <span>SAUX SOLUTION</span>
+
+                <img src="assets/logo.png"
+                     alt="SAUX SOLUTION Logo">
+
+                <span>
+                    SAUX SOLUTION
+                </span>
+
             </div>
 
+
             <p>
-                Professional Amazon marketplace services focused on account
-                management, imaging, FBA preparation and seller training.
+
+                Professional Amazon marketplace services focused on
+                account management, product imaging, FBA preparation,
+                packaging and seller training.
+
             </p>
 
         </div>
 
 
+
+        <!-- SERVICES -->
+
         <div>
 
-            <h3>Services</h3>
+            <h3>
+                Services
+            </h3>
+
 
             <ul>
-                <li><a href="#account-management">Account Management</a></li>
-                <li><a href="#imaging">Imaging</a></li>
-                <li><a href="#fba-prep">FBA Prep & Packaging</a></li>
-                <li><a href="#training">Training</a></li>
+
+                <li>
+                    <a href="#account-management">
+                        Account Management
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#imaging">
+                        Imaging
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#fba-prep">
+                        FBA Prep & Packaging
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#training">
+                        Training
+                    </a>
+                </li>
+
             </ul>
 
         </div>
 
 
+
+        <!-- CONTACT -->
+
         <div>
 
-            <h3>Contact</h3>
+            <h3>
+                Contact
+            </h3>
+
 
             <ul>
+
                 <li>
+
                     <i class="fa-solid fa-phone"></i>
+
                     +91 9226494403
+
                 </li>
 
+
                 <li>
+
                     <i class="fa-solid fa-envelope"></i>
+
                     sauxsolution@gmail.com
+
                 </li>
 
+
                 <li>
+
                     <i class="fa-solid fa-globe"></i>
+
                     saux.in
+
                 </li>
+
             </ul>
 
         </div>
+
 
     </div>
 
 
+
     <div class="footer-bottom">
+
         © 2026 SAUX SOLUTION. All Rights Reserved.
+
     </div>
 
 </footer>
 
 
+
+<!-- =========================
+     SMOOTH SCROLL
+========================= -->
+
 <script>
-    // Smooth navigation
+
     document.querySelectorAll('a[href^="#"]').forEach(link => {
+
         link.addEventListener('click', function(e) {
 
-            const target = document.querySelector(this.getAttribute('href'));
+            const target =
+                document.querySelector(
+                    this.getAttribute('href')
+                );
 
             if (target) {
+
                 e.preventDefault();
 
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const header =
+                    document.querySelector('.site-header');
+
+                const headerHeight =
+                    header ? header.offsetHeight : 0;
+
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    headerHeight -
+                    15;
+
+                window.scrollTo({
+
+                    top: targetPosition,
+
+                    behavior: 'smooth'
+
                 });
+
             }
 
         });
+
     });
+
 </script>
+
 
 </body>
 </html>
