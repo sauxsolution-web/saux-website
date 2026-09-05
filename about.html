@@ -3,48 +3,254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - SAUX Solution</title>
-<link rel="stylesheet" href="css/style.css">
+<title>About Us | SAUX SOLUTION</title>
+<meta name="description" content="Learn about SAUX SOLUTION, an Amazon seller support company focused on account management, listing optimization, imaging, FBA support, advertising and seller growth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+ --blue:#087df2;--blue2:#0057c8;--orange:#ff8a00;--orange2:#ff5a00;
+ --navy:#071a35;--text:#17263d;--muted:#708096;--soft:#f5f9fe;
+ --line:#e4edf7;--shadow:0 20px 60px rgba(7,43,82,.12)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,Arial,sans-serif;color:var(--text);overflow-x:hidden;background:#fff}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{height:76px;display:flex;align-items:center;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy);font-size:19px}
+.brand img{width:46px;height:46px;object-fit:contain}
+nav{display:flex;gap:25px;align-items:center;font-size:13px;font-weight:600}
+nav a:hover{color:var(--blue)}
+.cta{padding:11px 17px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff}
+.hero{position:relative;overflow:hidden;padding:95px 0 80px;background:
+radial-gradient(circle at 82% 20%,rgba(255,138,0,.15),transparent 28%),
+radial-gradient(circle at 10% 60%,rgba(8,125,242,.12),transparent 32%),
+linear-gradient(180deg,#fff,#f6faff)}
+.hero:before{content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(8,125,242,.12);border-radius:50%;right:-180px;top:-180px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center;position:relative}
+.kicker{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+h1{font-size:clamp(42px,5vw,64px);line-height:1.05;letter-spacing:-2px;color:var(--navy)}
+.gradient{background:linear-gradient(100deg,var(--blue),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:15px;line-height:1.85;margin:20px 0;max-width:650px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.btn{padding:13px 19px;border-radius:12px;font-size:13px;font-weight:700;transition:.25s}
+.btn:hover{transform:translateY(-3px)}
+.primary{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 12px 28px rgba(8,125,242,.24)}
+.secondary{border:1px solid var(--line);background:#fff;color:var(--navy)}
+.logo-card{height:370px;border-radius:32px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);display:grid;place-items:center;position:relative;overflow:hidden}
+.logo-card:before{content:"";position:absolute;width:280px;height:280px;border:1px dashed #b9d8f8;border-radius:50%;animation:spin 20s linear infinite}
+.logo-card:after{content:"";position:absolute;width:185px;height:185px;border:1px solid #e0ecf8;border-radius:50%}
+.logo-card img{width:150px;height:150px;object-fit:contain;position:relative;z-index:2}
+.dot{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--orange);top:43px;left:50%;z-index:3;box-shadow:0 0 0 8px rgba(255,138,0,.12)}
+.section{padding:82px 0}
+.head{text-align:center;max-width:720px;margin:0 auto 40px}
+.head h2{font-size:38px;line-height:1.15;color:var(--navy);letter-spacing:-1px}
+.head p{font-size:13px;line-height:1.8;color:var(--muted);margin-top:12px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{border:1px solid var(--line);border-radius:22px;padding:29px;background:#fff;box-shadow:0 12px 35px rgba(9,48,91,.05)}
+.card h3{font-size:19px;color:var(--navy);margin-bottom:11px}
+.card p{font-size:13px;line-height:1.85;color:var(--muted)}
+.moto{background:linear-gradient(135deg,#061a36,#087df2 72%,#ff8500);color:#fff;border:0;position:relative;overflow:hidden}
+.moto:after{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(255,255,255,.16);border-radius:50%;right:-70px;bottom:-120px}
+.moto h3,.moto p{color:#fff;position:relative;z-index:2}
+.moto strong{display:block;font-size:22px;line-height:1.45;margin-bottom:12px;position:relative;z-index:2}
+.focus{background:var(--soft)}
+.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.focus-card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:23px;transition:.3s}
+.focus-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.icon{width:50px;height:50px;border-radius:15px;background:#edf6ff;display:grid;place-items:center;font-size:21px;margin-bottom:16px}
+.focus-card h3{font-size:15px;color:var(--navy);margin-bottom:7px}
+.focus-card p{font-size:11px;line-height:1.7;color:var(--muted)}
+.owner{display:grid;grid-template-columns:.7fr 1.3fr;gap:35px;align-items:stretch}
+.owner-box{border-radius:24px;background:linear-gradient(145deg,#071a35,#0b65c7);color:#fff;padding:34px;display:flex;flex-direction:column;justify-content:center;min-height:280px}
+.owner-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;opacity:.7}
+.owner-name{font-size:29px;font-weight:800;margin-top:7px}
+.owner-role{font-size:12px;opacity:.82;margin-top:5px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.info-item{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff}
+.info-item.full{grid-column:1/-1}
+.info-item .label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;color:var(--blue);margin-bottom:7px}
+.info-item p,.info-item a{font-size:13px;line-height:1.7;color:var(--navy);font-weight:600}
+.info-item a:hover{color:var(--blue)}
+.contact{background:linear-gradient(180deg,#f7fbff,#fff)}
+.contact-box{border-radius:27px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:38px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.contact-box h2{font-size:28px;color:var(--navy)}
+.contact-box p{font-size:12px;color:var(--muted);margin-top:7px}
+footer{background:#06162c;color:#aebdd0;padding:34px 0}
+.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer-brand{color:#fff;font-weight:800;display:flex;align-items:center;gap:8px}
+.footer-brand img{width:38px;height:38px;object-fit:contain}
+.footer p{font-size:10px}
+.float{position:fixed;right:17px;bottom:18px;display:flex;flex-direction:column;gap:9px;z-index:999}
+.float a{width:48px;height:48px;border-radius:15px;color:#fff;display:grid;place-items:center;font-size:19px;box-shadow:0 10px 28px rgba(0,0,0,.18);transition:.25s}
+.float a:hover{transform:translateY(-4px)}
+.whatsapp{background:#20bf6b}.phone{background:var(--blue)}.email{background:var(--orange)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:850px){
+ .hero-grid,.owner{grid-template-columns:1fr}.hero{padding:65px 0}.logo-card{height:310px}.focus-grid{grid-template-columns:1fr 1fr}
+ nav a:not(.cta){display:none}
+}
+@media(max-width:600px){
+ .section{padding:60px 0}.about-grid,.focus-grid,.info{grid-template-columns:1fr}
+ .info-item.full{grid-column:auto}.contact-box{flex-direction:column;align-items:flex-start;padding:28px}
+ .head h2{font-size:31px}.hero h1{font-size:43px}.footer{flex-direction:column;align-items:flex-start}
+}
+</style>
 </head>
-
 <body>
 
 <header>
-
-<div class="logo">
-<img src="assets/logo.png">
-<h2>SAUX SOLUTION</h2>
-</div>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="enquiry.html">Enquiry</a>
-<a href="contact.html">Contact</a>
-</nav>
-
+ <div class="container nav">
+  <a href="index.html" class="brand">
+   <img src="assets/logo.png" alt="SAUX SOLUTION">
+   <span>SAUX SOLUTION</span>
+  </a>
+  <nav>
+   <a href="index.html">Home</a>
+   <a href="service.html">Services</a>
+   <a href="#about">About</a>
+   <a href="#contact" class="cta">Contact Us</a>
+  </nav>
+ </div>
 </header>
 
-<section class="page-banner">
-<h1>About Us</h1>
+<main>
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="kicker">About SAUX SOLUTION</div>
+   <h1>Focused on<br><span class="gradient">Amazon Sellers.</span></h1>
+   <p>
+    SAUX SOLUTION is dedicated exclusively to supporting Amazon sellers with
+    practical, structured and ongoing marketplace solutions. We work around
+    the areas that matter most to an Amazon business — account health,
+    listings, catalog, creative content, FBA, advertising and growth.
+   </p>
+   <div class="buttons">
+    <a class="btn primary" href="service.html">Explore Our Services →</a>
+    <a class="btn secondary" href="tel:9322254738">Talk to Us</a>
+   </div>
+  </div>
+  <div class="logo-card">
+   <span class="dot"></span>
+   <img src="assets/logo.png" alt="SAUX SOLUTION Logo">
+  </div>
+ </div>
 </section>
 
-<section class="content">
+<section class="section" id="about">
+ <div class="container">
+  <div class="head">
+   <div class="kicker">Who We Are</div>
+   <h2>Built to Help Amazon Sellers Work Better & Grow</h2>
+   <p>Our approach is simple: understand the seller's situation, identify what needs improvement, execute the right work and keep improving.</p>
+  </div>
 
-<p>
-SAUX Solution helps online sellers manage and grow their business across multiple marketplaces.
-We provide onboarding, GST support, account management, product listing, advertising and business consulting services.
-</p>
-
+  <div class="about-grid">
+   <div class="card">
+    <h3>Why We Are Working</h3>
+    <p>
+     Amazon selling involves many connected activities. A seller may need to
+     manage account performance, improve listings, maintain inventory,
+     create better product images, handle FBA requirements and optimize
+     advertising at the same time. SAUX SOLUTION works to make these
+     activities more organized and manageable for Amazon sellers.
+    </p>
+   </div>
+   <div class="card moto">
+    <h3>Our Motto</h3>
+    <strong>“Analyze. Optimize. Execute. Improve. Grow.”</strong>
+    <p>
+     We believe consistent marketplace improvement comes from understanding
+     the account, taking the right action and continuously monitoring the
+     results.
+    </p>
+   </div>
+  </div>
+ </div>
 </section>
+
+<section class="section focus">
+ <div class="container">
+  <div class="head">
+   <div class="kicker">Our Focus</div>
+   <h2>Amazon Marketplace, End to End</h2>
+   <p>Every part of our service is designed around the day-to-day needs and growth of Amazon sellers.</p>
+  </div>
+
+  <div class="focus-grid">
+   <div class="focus-card"><div class="icon">⚙️</div><h3>Account Management</h3><p>Performance monitoring, account support, issue handling and ongoing account management.</p></div>
+   <div class="focus-card"><div class="icon">🛒</div><h3>Listing & Catalog</h3><p>Titles, bullets, descriptions, keywords, attributes, catalog creation and listing optimization.</p></div>
+   <div class="focus-card"><div class="icon">🎨</div><h3>Imaging & Creative</h3><p>Product images, infographics and marketplace creatives designed for stronger product presentation.</p></div>
+   <div class="focus-card"><div class="icon">📦</div><h3>FBA Prep & Support</h3><p>Support related to FBA preparation, packaging and fulfillment requirements.</p></div>
+   <div class="focus-card"><div class="icon">🎯</div><h3>Advertising Optimization</h3><p>Campaign management, keyword research, bid control and performance optimization.</p></div>
+   <div class="focus-card"><div class="icon">📚</div><h3>Seller Training</h3><p>Practical training to help sellers understand and manage Amazon marketplace operations.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="head">
+   <div class="kicker">Leadership & Contact</div>
+   <h2>Meet the Team Behind SAUX SOLUTION</h2>
+  </div>
+
+  <div class="owner">
+   <div class="owner-box">
+    <span class="owner-label">Owner</span>
+    <div class="owner-name">Kanchan Thorwe</div>
+    <div class="owner-role">SAUX SOLUTION</div>
+   </div>
+
+   <div class="info">
+    <div class="info-item">
+     <div class="label">Phone</div>
+     <a href="tel:9322254738">+91 93222 54738</a>
+    </div>
+    <div class="info-item">
+     <div class="label">Email</div>
+     <a href="mailto:sauxsolution@gmail.com">sauxsolution@gmail.com</a>
+    </div>
+    <div class="info-item full">
+     <div class="label">Office Address</div>
+     <p>Satkarya Nagar, Ambad Road,<br>Jalna, Maharashtra – 431203, India</p>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section contact" id="contact">
+ <div class="container">
+  <div class="contact-box">
+   <div>
+    <h2>Need Support With Your Amazon Business?</h2>
+    <p>Connect with SAUX SOLUTION to discuss your Amazon account, listings, FBA, advertising or marketplace requirements.</p>
+   </div>
+   <a class="btn primary" href="tel:9322254738">Contact Us →</a>
+  </div>
+ </div>
+</section>
+</main>
 
 <footer>
-© 2026 SAUX SOLUTION
+ <div class="container footer">
+  <div class="footer-brand"><img src="assets/logo.png" alt="">SAUX SOLUTION</div>
+  <p>Amazon Seller Services • Account Management • Listing • Imaging • FBA • Advertising • Training</p>
+  <p>© 2026 SAUX SOLUTION. All Rights Reserved.</p>
+ </div>
 </footer>
 
+<div class="float">
+ <a class="whatsapp" href="https://wa.me/919322254738" target="_blank" aria-label="WhatsApp">◔</a>
+ <a class="phone" href="tel:9322254738" aria-label="Call">☎</a>
+ <a class="email" href="mailto:sauxsolution@gmail.com" aria-label="Email">✉</a>
+</div>
 
-</a>
-  
 </body>
 </html>
