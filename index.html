@@ -1,530 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAUX SOLUTION | E-Commerce Growth & Marketplace Solutions</title>
+<meta name="description" content="SAUX SOLUTION helps sellers grow across Amazon, Flipkart and Meesho with account management, listing optimization, imaging, FBA support, advertising, training and marketplace solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --blue:#087df2;
+  --blue2:#0056c9;
+  --orange:#ff8b00;
+  --orange2:#ff5a00;
+  --navy:#071a35;
+  --text:#15243b;
+  --muted:#718096;
+  --soft:#f4f8fd;
+  --white:#fff;
+  --line:#e7eef7;
+  --shadow:0 20px 60px rgba(9,48,91,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,Arial,sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.topbar{background:var(--navy);color:#fff;font-size:12px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:20px}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(8,125,242,.08)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--navy)}
+.brand img{width:48px;height:48px;object-fit:contain}
+.navlinks{display:flex;align-items:center;gap:27px;font-size:14px;font-weight:600}
+.navlinks a{position:relative}
+.navlinks a:after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--orange));transition:.3s}
+.navlinks a:hover:after{width:100%}
+.nav-cta{padding:11px 18px;border-radius:12px;color:#fff!important;background:linear-gradient(135deg,var(--blue),var(--blue2));box-shadow:0 9px 22px rgba(8,125,242,.25)}
+.nav-cta:after{display:none}
 
-<title>
-SAUX SOLUTION | eCommerce Growth Ecosystem India
-</title>
+.hero{position:relative;min-height:680px;display:flex;align-items:center;overflow:hidden;background:
+ radial-gradient(circle at 80% 20%,rgba(255,139,0,.18),transparent 28%),
+ radial-gradient(circle at 15% 30%,rgba(8,125,242,.16),transparent 32%),
+ linear-gradient(180deg,#fff,#f6faff)}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none}
+.blob.one{width:370px;height:370px;background:rgba(8,125,242,.08);right:-100px;top:80px;animation:float 8s ease-in-out infinite}
+.blob.two{width:280px;height:280px;background:rgba(255,139,0,.09);left:-100px;bottom:-80px;animation:float 10s ease-in-out infinite reverse}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:50px;align-items:center;position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid #d9e9fb;background:#fff;border-radius:999px;color:var(--blue2);font-size:12px;font-weight:700;box-shadow:0 8px 25px rgba(9,48,91,.06)}
+.pulse-dot{width:8px;height:8px;background:var(--orange);border-radius:50%;box-shadow:0 0 0 0 rgba(255,139,0,.55);animation:pulse 1.8s infinite}
+.hero h1{font-size:clamp(40px,5vw,68px);line-height:1.06;letter-spacing:-2.2px;margin:20px 0 18px;color:var(--navy)}
+.hero h1 span{background:linear-gradient(100deg,var(--blue),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:610px;color:#687992;font-size:16px;line-height:1.8}
+.actions{display:flex;gap:12px;margin:30px 0 25px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:13px;font-size:14px;font-weight:700;transition:.25s;border:1px solid transparent}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 14px 30px rgba(8,125,242,.25)}
+.btn-secondary{background:#fff;border-color:#dce8f5;color:var(--navy);box-shadow:0 9px 25px rgba(9,48,91,.06)}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:12px}
+.trust-item{display:flex;align-items:center;gap:8px;color:#607088;font-size:12px}
+.check{width:21px;height:21px;border-radius:7px;display:grid;place-items:center;background:#e9f6ff;color:var(--blue);font-weight:800}
 
-<meta
-name="description"
-content="SAUX SOLUTION is India’s growing eCommerce ecosystem for marketplace management, seller growth, registrations, licenses, software solutions and digital commerce support.">
+.hero-visual{position:relative;min-height:510px;display:grid;place-items:center}
+.orbit{width:390px;height:390px;border-radius:50%;border:1px dashed #b9d7f7;position:absolute;animation:spin 26s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--orange);top:8px;left:50%;box-shadow:0 0 0 7px rgba(255,139,0,.12)}
+.orbit:after{top:auto;left:auto;right:5px;bottom:65px;background:var(--blue);box-shadow:0 0 0 7px rgba(8,125,242,.12)}
+.core{width:235px;height:235px;border-radius:50%;background:#fff;box-shadow:0 25px 70px rgba(7,42,81,.16);display:flex;align-items:center;justify-content:center;position:relative;z-index:3;border:9px solid #f1f7fd}
+.core img{width:150px;height:150px;object-fit:contain}
+.float-card{position:absolute;background:rgba(255,255,255,.96);border:1px solid #e1ecf8;box-shadow:var(--shadow);border-radius:18px;padding:13px 15px;display:flex;align-items:center;gap:11px;font-size:12px;font-weight:700;z-index:5}
+.float-card b{display:block;font-size:13px;color:var(--navy)}
+.float-card small{display:block;color:#8390a2;font-weight:500;margin-top:2px}
+.f-icon{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:17px;background:#eaf5ff}
+.fc1{top:52px;right:15px;animation:float 5s ease-in-out infinite}
+.fc2{left:0;top:185px;animation:float 6s ease-in-out infinite .7s}
+.fc3{right:10px;bottom:70px;animation:float 5.5s ease-in-out infinite 1.2s}
+.fc4{left:48px;bottom:35px;animation:float 6.5s ease-in-out infinite 1.7s}
 
-<meta
-name="keywords"
-content="Amazon account management India, Flipkart seller service, ecommerce management company, GST registration, seller growth service, marketplace management, ecommerce software India, SAUX SOLUTION">
+.section{padding:88px 0}
+.section-head{text-align:center;max-width:730px;margin:0 auto 42px}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:800;color:var(--blue);margin-bottom:9px}
+.section-head h2{font-size:clamp(30px,4vw,43px);line-height:1.15;color:var(--navy);letter-spacing:-1px}
+.section-head p{margin-top:13px;color:var(--muted);font-size:14px;line-height:1.8}
 
-<meta
-name="robots"
-content="index, follow">
+.services{background:var(--soft);position:relative;overflow:hidden}
+.services:before{content:"";position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(8,125,242,.05);top:-260px;right:-160px}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px;position:relative}
+.service-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;min-height:235px;position:relative;overflow:hidden;transition:.3s;box-shadow:0 10px 35px rgba(15,55,95,.05)}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(15,55,95,.12);border-color:#cce4fb}
+.service-card:after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;right:-55px;top:-55px;background:linear-gradient(135deg,rgba(8,125,242,.12),rgba(255,139,0,.12))}
+.service-img{width:58px;height:58px;border-radius:16px;object-fit:contain;padding:7px;background:#f5f9fe;margin-bottom:18px}
+.service-card h3{font-size:16px;color:var(--navy);margin-bottom:8px}
+.service-card p{font-size:12px;line-height:1.7;color:#78879a}
+.service-link{display:inline-flex;margin-top:15px;font-size:11px;font-weight:800;color:var(--blue);gap:5px}
 
-<link rel="stylesheet"
-href="css/style.css?v=10">
+.marketplaces{padding-top:72px}
+.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.market{position:relative;min-height:190px;border-radius:24px;padding:25px;overflow:hidden;color:#fff;box-shadow:var(--shadow)}
+.market.amazon{background:linear-gradient(135deg,#071a35,#0b62bb)}
+.market.flipkart{background:linear-gradient(135deg,#0056c9,#168cff)}
+.market.meesho{background:linear-gradient(135deg,#ff6c00,#ff9f1a)}
+.market h3{font-size:25px;margin-bottom:6px}
+.market p{font-size:12px;line-height:1.7;max-width:280px;opacity:.9}
+.market .wave{position:absolute;width:220px;height:220px;border:1px solid rgba(255,255,255,.18);border-radius:50%;right:-70px;bottom:-110px}
+.market .wave2{position:absolute;width:150px;height:150px;border:1px solid rgba(255,255,255,.13);border-radius:50%;right:15px;bottom:-80px}
+.market .mini{position:absolute;right:24px;top:24px;font-size:32px;opacity:.85}
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+.process{background:#fff}
+.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.process-card{text-align:center;padding:24px 12px;position:relative}
+.process-card:not(:last-child):after{content:"";position:absolute;width:100%;height:2px;top:48px;left:60%;background:linear-gradient(90deg,#c9e2fb,#ffd7a4)}
+.process-no{width:58px;height:58px;border-radius:18px;margin:0 auto 15px;display:grid;place-items:center;color:#fff;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--orange));box-shadow:0 10px 25px rgba(8,125,242,.18)}
+.process-card h3{font-size:14px;color:var(--navy)}
+.process-card p{font-size:11px;color:#8490a0;margin-top:7px;line-height:1.6}
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+.growth{background:linear-gradient(180deg,#f7fbff,#fff);overflow:hidden}
+.growth-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.growth-copy h2{font-size:42px;line-height:1.15;color:var(--navy);letter-spacing:-1px}
+.growth-copy p{font-size:14px;line-height:1.8;color:var(--muted);margin:15px 0 22px}
+.points{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.point{padding:13px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:12px;font-weight:700;box-shadow:0 8px 25px rgba(9,48,91,.04)}
+.point span{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:8px;background:#eaf5ff;color:var(--blue);margin-right:7px}
+.growth-animation{height:370px;position:relative;display:grid;place-items:center}
+.ring{position:absolute;border-radius:50%;border:1px solid #d8e9f9}
+.r1{width:330px;height:330px;animation:spin 18s linear infinite}
+.r2{width:245px;height:245px;animation:spin 12s linear infinite reverse}
+.r3{width:155px;height:155px}
+.ring-dot{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--orange);top:8px;left:50%;box-shadow:0 0 0 8px rgba(255,139,0,.12)}
+.growth-center{width:105px;height:105px;border-radius:30px;background:#fff;box-shadow:0 20px 50px rgba(8,54,95,.15);display:grid;place-items:center;color:var(--blue);font-size:33px;z-index:2}
+.growth-tag{position:absolute;background:#fff;border:1px solid var(--line);padding:10px 13px;border-radius:12px;box-shadow:0 10px 30px rgba(9,48,91,.08);font-size:11px;font-weight:700}
+.gt1{top:38px;left:25px}.gt2{right:8px;top:110px}.gt3{left:65px;bottom:45px}.gt4{right:60px;bottom:30px}
 
+.stats{padding:28px 0;background:var(--navy);color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.stat{text-align:center;padding:10px;border-right:1px solid rgba(255,255,255,.12)}
+.stat:last-child{border-right:0}
+.stat strong{display:block;font-size:29px;background:linear-gradient(90deg,#5bb2ff,#ffb04a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:11px;color:#b9c6d8}
+
+.cta{padding:75px 0}
+.cta-box{border-radius:28px;padding:48px;position:relative;overflow:hidden;color:#fff;background:linear-gradient(120deg,#061a36,#087df2 65%,#ff8500)}
+.cta-box:before,.cta-box:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.15);border-radius:50%}
+.cta-box:before{width:360px;height:360px;right:-120px;top:-180px}
+.cta-box:after{width:220px;height:220px;right:30px;bottom:-150px}
+.cta-content{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta h2{font-size:31px;line-height:1.2}
+.cta p{font-size:13px;opacity:.85;margin-top:8px}
+.cta .btn{background:#fff;color:var(--navy)}
+
+footer{background:#06162c;color:#aebdd0;padding:42px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px}
+.footer-brand{color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.footer-brand img{width:42px;height:42px;object-fit:contain}
+footer h4{color:#fff;font-size:13px;margin-bottom:13px}
+footer a,footer p{font-size:11px;line-height:2}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:17px;display:flex;justify-content:space-between;font-size:10px}
+
+.floating{position:fixed;right:18px;bottom:20px;z-index:2000;display:flex;flex-direction:column;gap:10px}
+.float-btn{width:49px;height:49px;border-radius:16px;display:grid;place-items:center;color:#fff;font-size:20px;box-shadow:0 12px 30px rgba(0,0,0,.18);transition:.25s}
+.float-btn:hover{transform:translateY(-4px) scale(1.04)}
+.whatsapp{background:#20bf6b}.phone{background:var(--blue)}.email{background:var(--orange)}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(255,139,0,0)}100%{box-shadow:0 0 0 0 rgba(255,139,0,0)}}
+
+@media(max-width:1000px){
+  .navlinks{gap:14px}.hero-grid,.growth-wrap{grid-template-columns:1fr}.hero{min-height:auto;padding:70px 0}.hero-visual{min-height:440px}.service-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(3,1fr)}.process-card:after{display:none}.footer-grid{grid-template-columns:2fr 1fr 1fr}
+}
+@media(max-width:700px){
+  .topbar{display:none}.nav{height:66px}.brand img{width:42px;height:42px}.brand{font-size:17px}.navlinks a:not(.nav-cta){display:none}.hero{padding:48px 0 35px}.hero h1{font-size:41px;letter-spacing:-1.5px}.hero p{font-size:14px}.hero-visual{transform:scale(.82);margin:-30px 0 -55px;min-height:390px}.service-grid,.market-grid,.stats-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}.growth-copy h2{font-size:34px}.points{grid-template-columns:1fr}.cta-box{padding:34px 25px}.cta-content{flex-direction:column;align-items:flex-start}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:6px}.section{padding:65px 0}
+}
+@media(max-width:430px){
+  .service-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr}.hero-visual{transform:scale(.72);margin:-70px 0 -90px}.footer-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
+<div class="topbar">
+  <div class="container">
+    <span>Marketplace Growth • Account Management • Listing • Imaging • FBA • Training</span>
+    <span>Amazon • Flipkart • Meesho</span>
+  </div>
+</div>
 
 <header>
-
-<div class="logo">
-
-<img src="assets/logo.png"
-alt="SAUX Logo">
-
-<h2>SAUX SOLUTION</h2>
-
-</div>
-
-<nav class="navbar">
-
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="services.html">Services</a>
-
-</nav>
-  
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="SAUX SOLUTION">
+      <span>SAUX SOLUTION</span>
+    </a>
+    <nav class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#marketplaces">Marketplaces</a>
+      <a href="#process">Process</a>
+      <a href="service.html">All Services</a>
+      <a class="nav-cta" href="#contact">Get Started</a>
+    </nav>
+  </div>
 </header>
 
+<main>
 <section class="hero">
+  <div class="blob one"></div><div class="blob two"></div>
+  <div class="container hero-grid">
+    <div>
+      <div class="badge"><i class="pulse-dot"></i> Complete E-Commerce Marketplace Support</div>
+      <h1>Build. Optimize.<br><span>Grow Your Marketplace.</span></h1>
+      <p>
+        SAUX SOLUTION helps sellers manage, improve and scale their marketplace
+        business with practical account management, listing optimization,
+        creative imaging, FBA support, advertising optimization and seller training.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="service.html">Explore Services →</a>
+        <a class="btn btn-secondary" href="tel:9322254738">Talk to Us</a>
+      </div>
+      <div class="trust">
+        <div class="trust-item"><span class="check">✓</span> Account Support</div>
+        <div class="trust-item"><span class="check">✓</span> Organic Growth</div>
+        <div class="trust-item"><span class="check">✓</span> Marketplace Optimization</div>
+      </div>
+    </div>
 
-<div class="hero-overlay"></div>
+    <div class="hero-visual">
+      <div class="orbit"></div>
+      <div class="core"><img src="assets/logo.png" alt="SAUX SOLUTION Logo"></div>
 
-<div class="hero-blur blur1"></div>
-
-<div class="hero-blur blur2"></div>
-
-<div class="hero-content">
-
-<h1>
-
-India’s Growing
-
-<span>eCommerce Growth Ecosystem</span>
-
-</h1>
-
-<p>
-
-Empowering brands, sellers and businesses
-with scalable digital commerce solutions,
-marketplace operations and business automation.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="enquiry.html"
-class="btn">
-
-Start Growth Journey
-
-</a>
-
-<a href="services.html"
-class="btn secondary-btn">
-
-Explore Ecosystem
-
-</a>
-
-</div>
-
-<div class="hero-stats">
-
-<div class="stat-box">
-
-<h2>1500+</h2>
-
-<p>Sellers Connected</p>
-
-</div>
-
-<div class="stat-box">
-
-<h2>8+</h2>
-
-<p>Marketplaces</p>
-
-</div>
-
-<div class="stat-box">
-
-<h2>24x7</h2>
-
-<p>Support</p>
-
-</div>
-
-<div class="stat-box">
-
-<h2>99%</h2>
-
-<p>Satisfaction</p>
-
-</div>
-
-</div>
-
-</div>
-
+      <div class="float-card fc1">
+        <div class="f-icon">📈</div><div><b>Growth Focus</b><small>Optimize & improve</small></div>
+      </div>
+      <div class="float-card fc2">
+        <div class="f-icon">🛍️</div><div><b>Listings</b><small>SEO + content</small></div>
+      </div>
+      <div class="float-card fc3">
+        <div class="f-icon">🎯</div><div><b>Ads</b><small>Campaign optimization</small></div>
+      </div>
+      <div class="float-card fc4">
+        <div class="f-icon">⚙️</div><div><b>Account</b><small>Daily management</small></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="marketplace-strip">
-
-<div class="marketplace-track">
-
-<span>Amazon</span>
-
-<span>Flipkart</span>
-
-<span>Meesho</span>
-
-<span>Myntra</span>
-
-<span>Ajio</span>
-
-<span>Shopify</span>
-
-<span>ONDC</span>
-
-<span>JioMart</span>
-
-<span>Amazon</span>
-
-<span>Flipkart</span>
-
-<span>Meesho</span>
-
-<span>Myntra</span>
-
-</div>
-
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><strong>1500+</strong><span>Sellers Onboarded</span></div>
+    <div class="stat"><strong>1200+</strong><span>Active Sellers</span></div>
+    <div class="stat"><strong>3</strong><span>Major Marketplaces</span></div>
+    <div class="stat"><strong>360°</strong><span>Marketplace Support</span></div>
+  </div>
 </section>
 
-<section class="company-section">
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Explore Services</div>
+      <h2>Everything Your Marketplace Business Needs</h2>
+      <p>From account setup and daily management to listings, creative content, fulfillment and growth — SAUX SOLUTION brings your marketplace operations together.</p>
+    </div>
 
-<div class="section-heading">
-
-<h2>About SAUX SOLUTION</h2>
-
-<p>
-
-SAUX SOLUTION is a modern digital commerce ecosystem helping
-brands and online sellers establish, scale and automate
-their eCommerce operations across multiple platforms.
-
-</p>
-
-</div>
-
-<div class="company-grid">
-
-<div class="company-card">
-
-<i class="fas fa-globe"></i>
-
-<h3>Digital Commerce</h3>
-
-<p>
-Scalable ecosystem designed for modern businesses and online sellers.
-</p>
-
-</div>
-
-<div class="company-card">
-
-<i class="fas fa-layer-group"></i>
-
-<h3>Integrated Solutions</h3>
-
-<p>
-Unified support ecosystem for operations, growth and automation.
-</p>
-
-</div>
-
-<div class="company-card">
-
-<i class="fas fa-chart-line"></i>
-
-<h3>Business Growth</h3>
-
-<p>
-Focused on marketplace visibility, scaling and seller success.
-</p>
-
-</div>
-
-</div>
-
+    <div class="service-grid">
+      <a class="service-card" href="service.html#account-management">
+        <img class="service-img" src="assets/Account Management.png" alt="Account Management">
+        <h3>Account Management</h3>
+        <p>Complete account support, performance management, brand protection, FBA upgrades and post-reinstatement support.</p>
+        <span class="service-link">Explore service →</span>
+      </a>
+      <a class="service-card" href="service.html#cataloging">
+        <img class="service-img" src="assets/Cataloging.png" alt="Cataloging">
+        <h3>Cataloging & Listing</h3>
+        <p>Product listing creation, optimization, titles, bullets, descriptions, keywords, attributes and catalog improvement.</p>
+        <span class="service-link">Explore service →</span>
+      </a>
+      <a class="service-card" href="service.html#brand">
+        <img class="service-img" src="assets/Enhanced Brand.png" alt="Enhanced Brand">
+        <h3>Enhanced Brand</h3>
+        <p>Brand-focused marketplace content designed to improve presentation, consistency and customer understanding.</p>
+        <span class="service-link">Explore service →</span>
+      </a>
+      <a class="service-card" href="service.html#imaging">
+        <img class="service-img" src="assets/Imaging.png" alt="Imaging">
+        <h3>Imaging & Creative</h3>
+        <p>Marketplace-ready product images, infographics, lifestyle creatives and visual improvements for stronger listings.</p>
+        <span class="service-link">Explore service →</span>
+      </a>
+      <a class="service-card" href="service.html#fba">
+        <img class="service-img" src="assets/FBA Prep & Packaging.png" alt="FBA Prep and Packaging">
+        <h3>FBA Prep & Packaging</h3>
+        <p>Support for FBA preparation, packaging requirements and operational improvements for marketplace fulfillment.</p>
+        <span class="service-link">Explore service →</span>
+      </a>
+      <a class="service-card" href="service.html#advertising">
+        <img class="service-img" src="assets/Advertising Optimization.png" alt="Advertising Optimization">
+        <h3>Advertising Optimization</h3>
+        <p>Campaign setup, keyword research, bid control, optimization and performance-focused advertising management.</p>
+        <span class="service-link">Explore service →</span>
+      </a>
+      <a class="service-card" href="service.html#training">
+        <img class="service-img" src="assets/Training.png" alt="Training">
+        <h3>Seller Training</h3>
+        <p>Practical marketplace training covering account management, listings, organic growth and day-to-day operations.</p>
+        <span class="service-link">Explore service →</span>
+      </a>
+      <a class="service-card" href="service.html#support">
+        <img class="service-img" src="assets/Support.png" alt="Marketplace Support">
+        <h3>Marketplace Support</h3>
+        <p>Seller support for issues, performance notifications, returns, customer communication, inventory and marketplace operations.</p>
+        <span class="service-link">Explore service →</span>
+      </a>
+    </div>
+  </div>
 </section>
 
-<section class="ecosystem-section">
-
-<div class="section-heading">
-
-<h2>SAUX SOLUTION Ecosystem</h2>
-
-<p>
-
-Integrated business ecosystem built for scalable growth.
-
-</p>
-
-</div>
-
-<div class="ecosystem-grid">
-
-<div class="eco-card">
-
-<h3>Registrations</h3>
-
-<ul>
-
-<li>GST Registration</li>
-
-<li>MSME</li>
-
-<li>Trademark</li>
-
-<li>IEC Code</li>
-
-<li>FSSAI</li>
-
-<li>Company Registration</li>
-
-</ul>
-
-</div>
-
-<div class="eco-card">
-
-<h3>Marketplace Management</h3>
-
-<ul>
-
-<li>Amazon</li>
-
-<li>Flipkart</li>
-
-<li>Meesho</li>
-
-<li>Myntra</li>
-
-<li>Ajio</li>
-
-<li>Shopify</li>
-
-</ul>
-
-</div>
-
-<div class="eco-card">
-
-<h3>Seller Growth</h3>
-
-<ul>
-
-<li>Account Launch</li>
-
-<li>Account Reactivation</li>
-
-<li>Advertising</li>
-
-<li>SEO Optimization</li>
-
-<li>Performance Growth</li>
-
-</ul>
-
-</div>
-
-<div class="eco-card">
-
-<h3>Software Solutions</h3>
-
-<ul>
-
-<li>Profit & Loss</li>
-
-<li>Inventory Management</li>
-
-<li>GST Billing</li>
-
-<li>Reports & Analytics</li>
-
-<li>Order Management</li>
-
-</ul>
-
-</div>
-
-</div>
-
+<section class="section marketplaces" id="marketplaces">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Where We Work</div>
+      <h2>Built for Major Marketplaces</h2>
+      <p>One structured approach for managing and improving your presence across leading Indian marketplaces.</p>
+    </div>
+    <div class="market-grid">
+      <div class="market amazon"><div class="mini">A</div><h3>Amazon</h3><p>Account management, cataloging, FBA, brand, advertising, imaging and performance support.</p><i class="wave"></i><i class="wave2"></i></div>
+      <div class="market flipkart"><div class="mini">F</div><h3>Flipkart</h3><p>Seller account support, listing optimization, catalog work, inventory and marketplace operations.</p><i class="wave"></i><i class="wave2"></i></div>
+      <div class="market meesho"><div class="mini">M</div><h3>Meesho</h3><p>Seller onboarding, product listing, catalog optimization and practical marketplace support.</p><i class="wave"></i><i class="wave2"></i></div>
+    </div>
+  </div>
 </section>
 
-<section class="reviews-section">
-
-<div class="section-heading">
-
-<h2>Seller Reviews</h2>
-
-<p>
-
-Trusted by growing brands and marketplace sellers.
-
-</p>
-
-</div>
-
-<div class="review-grid">
-
-<div class="review-card">
-
-<p>
-
-“Professional support and excellent ecosystem for scaling our online business.”
-
-</p>
-
-<h4>— Rohit Sharma</h4>
-
-<span>Amazon Seller</span>
-
-</div>
-
-<div class="review-card">
-
-<p>
-
-“Highly professional support for marketplace operations and seller management.”
-
-</p>
-
-<h4>— Priya Textiles</h4>
-
-<span>Marketplace Brand</span>
-
-</div>
-
-<div class="review-card">
-
-<p>
-
-“Very smooth onboarding and operational support experience.”
-
-</p>
-
-<h4>— Fashion Hub</h4>
-
-<span>Online Seller</span>
-
-</div>
-
-</div>
-
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Our Growth Cycle</div>
+      <h2>Analyze → Plan → Optimize → Execute → Grow</h2>
+      <p>We follow a structured cycle so marketplace work is continuously reviewed, improved and executed.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="process-no">01</div><h3>Analyze</h3><p>Understand account, listings, products and performance.</p></div>
+      <div class="process-card"><div class="process-no">02</div><h3>Plan</h3><p>Create practical priorities and an action plan.</p></div>
+      <div class="process-card"><div class="process-no">03</div><h3>Optimize</h3><p>Improve listings, keywords, images and campaigns.</p></div>
+      <div class="process-card"><div class="process-no">04</div><h3>Execute</h3><p>Implement changes across marketplace operations.</p></div>
+      <div class="process-card"><div class="process-no">05</div><h3>Grow</h3><p>Monitor results, improve continuously and scale.</p></div>
+    </div>
+  </div>
 </section>
 
-<section class="cta-section">
-
-<h2>
-
-Build Your eCommerce Growth Journey With SAUX SOLUTION
-
-</h2>
-
-<p>
-
-Professional ecosystem for modern digital commerce businesses.
-
-</p>
-
-<a href="enquiry.html"
-class="btn">
-
-Send Enquiry
-
-</a>
-
+<section class="section growth">
+  <div class="container growth-wrap">
+    <div class="growth-copy">
+      <div class="kicker">Why SAUX SOLUTION</div>
+      <h2>One Team for Your Marketplace Operations.</h2>
+      <p>Instead of managing multiple disconnected tasks, bring account, catalog, creative, advertising and operational support into one structured workflow.</p>
+      <div class="points">
+        <div class="point"><span>✓</span>Account Performance</div>
+        <div class="point"><span>✓</span>Listing SEO</div>
+        <div class="point"><span>✓</span>Creative Imaging</div>
+        <div class="point"><span>✓</span>Inventory Support</div>
+        <div class="point"><span>✓</span>Campaign Control</div>
+        <div class="point"><span>✓</span>Seller Training</div>
+      </div>
+    </div>
+    <div class="growth-animation" aria-label="Animated marketplace growth graphic">
+      <div class="ring r1"><i class="ring-dot"></i></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="growth-center">↗</div>
+      <div class="growth-tag gt1">Analyze</div>
+      <div class="growth-tag gt2">Optimize</div>
+      <div class="growth-tag gt3">Execute</div>
+      <div class="growth-tag gt4">Grow</div>
+    </div>
+  </div>
 </section>
+
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-content">
+        <div>
+          <h2>Ready to Improve Your Marketplace?</h2>
+          <p>Talk to SAUX SOLUTION about your account, listings, products and growth goals.</p>
+        </div>
+        <a class="btn" href="tel:9322254738">Contact SAUX SOLUTION →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer>
-
-<div class="footer-content">
-
-<div>
-
-<h2>SAUX SOLUTION</h2>
-
-<p>
-
-Professional eCommerce Growth Ecosystem
-
-</p>
-
-</div>
-
-<div class="footer-links">
-
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="services.html">Services</a>
-
-<a href="enquiry.html">Enquiry</a>
-
-</div>
-
-<div class="footer-contact">
-
-<p>
-📞 +91 9226494403
-</p>
-
-<p>
-📧 sauxsolution@gmail.com
-</p>
-
-<p>
-🌐 www.saux.in
-</p>
-
-</div>
-
-</div>
-
-<p class="copyright">
-
-© 2026 SAUX SOLUTION | All Rights Reserved
-
-</p>
-
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/logo.png" alt="">SAUX SOLUTION</div>
+        <p>Marketplace growth and e-commerce support for sellers across Amazon, Flipkart and Meesho.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="service.html">Account Management</a></p>
+        <p><a href="service.html">Cataloging & SEO</a></p>
+        <p><a href="service.html">Imaging</a></p>
+        <p><a href="service.html">FBA Support</a></p>
+      </div>
+      <div>
+        <h4>Growth</h4>
+        <p><a href="service.html">Advertising</a></p>
+        <p><a href="service.html">Training</a></p>
+        <p><a href="service.html">Brand Support</a></p>
+        <p><a href="service.html">Marketplace Support</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:9322254738">9322254738</a></p>
+        <p><a href="mailto:sauxsolution@gmail.com">sauxsolution@gmail.com</a></p>
+        <p><a href="https://wa.me/919322254738">WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SAUX SOLUTION. All Rights Reserved.</span>
+      <span>Marketplace Solutions • Built for Growth</span>
+    </div>
+  </div>
 </footer>
 
-<a href="https://wa.me/919226494403"
-class="whatsapp-float">
-
-<i class="fab fa-whatsapp"></i>
-
-</a>
-
-<a href="tel:+919226494403"
-class="call-float">
-
-<i class="fas fa-phone"></i>
-
-</a>
+<div class="floating">
+  <a class="float-btn whatsapp" href="https://wa.me/919322254738" target="_blank" aria-label="WhatsApp">◔</a>
+  <a class="float-btn phone" href="tel:9322254738" aria-label="Call">☎</a>
+  <a class="float-btn email" href="mailto:sauxsolution@gmail.com" aria-label="Email">✉</a>
+</div>
 
 <script>
+/* Lightweight scroll reveal */
+const reveal = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+      reveal.unobserve(e.target);
+    }
+  });
+},{threshold:.08});
 
-document.addEventListener(
-"contextmenu",
-event => event.preventDefault()
-);
-
-document.onkeydown = function(e){
-
-if(e.keyCode == 123){
-
-return false;
-
-}
-
-if(e.ctrlKey &&
-e.shiftKey &&
-e.keyCode == 'I'.charCodeAt(0)){
-
-return false;
-
-}
-
-if(e.ctrlKey &&
-e.keyCode == 'U'.charCodeAt(0)){
-
-return false;
-
-}
-
-}
-
+document.querySelectorAll('.service-card,.market,.process-card,.point').forEach((el,i)=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(18px)';
+  el.style.transition=`opacity .55s ease ${Math.min(i*45,300)}ms, transform .55s ease ${Math.min(i*45,300)}ms`;
+  reveal.observe(el);
+});
 </script>
-
 </body>
-
 </html>
