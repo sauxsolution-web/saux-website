@@ -1,335 +1,447 @@
-if(sessionStorage.getItem("adminLoggedIn") !== "true"){
+/* =========================================
+   SAUX SOLUTION - ADMIN LEAD MANAGEMENT
+========================================= */
 
-window.location.href =
-"sauxsecureportal2026.html";
+/* ADMIN LOGIN PROTECTION */
+if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+    window.location.href = "sauxsecureportal2026.html";
+}
+
+
+/* =========================================
+   GET LEADS
+========================================= */
+
+function getLeads() {
+    try {
+        return JSON.parse(localStorage.getItem("enquiries")) || [];
+    } catch (error) {
+        console.error("Unable to read enquiries:", error);
+        return [];
+    }
+}
+
+
+/* =========================================
+   SAVE LEADS
+========================================= */
+
+function saveLeads(leads) {
+    localStorage.setItem("enquiries", JSON.stringify(leads));
+}
+
+
+/* =========================================
+   LOAD LEADS
+========================================= */
+
+function loadLeads() {
+
+    const leads = getLeads();
+
+    const container = document.getElementById("leadsContainer");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    if (leads.length === 0) {
+
+        container.innerHTML = `
+            <tr>
+                <td colspan="9" style="text-align:center;padding:30px;">
+                    No Leads Found
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+
+    /* NEWEST LEAD FIRST */
+
+    const reversedLeads = [...leads].reverse();
+
+
+    reversedLeads.forEach((lead, index) => {
+
+        const actualIndex = leads.length - 1 - index;
+
+
+        const row = document.createElement("tr");
+
+
+        row.innerHTML = `
+
+            <td>${index + 1}</td>
+
+            <td>${escapeHTML(lead.date || "N/A")}</td>
+
+            <td>${escapeHTML(lead.name || "")}</td>
+
+            <td>
+                <a href="tel:${escapeHTML(lead.phone || "")}">
+                    ${escapeHTML(lead.phone || "")}
+                </a>
+            </td>
+
+            <td>
+                <a href="mailto:${escapeHTML(lead.email || "")}">
+                    ${escapeHTML(lead.email || "")}
+                </a>
+            </td>
+
+            <td>
+                ${escapeHTML(lead.message || "")}
+            </td>
+
+            <td>
+
+                <select onchange="updateStatus(${actualIndex}, this.value)">
+
+                    <option value="New"
+                        ${lead.status === "New" ? "selected" : ""}>
+                        New
+                    </option>
+
+                    <option value="Pitched"
+                        ${lead.status === "Pitched" ? "selected" : ""}>
+                        Pitched
+                    </option>
+
+                    <option value="Follow-Up"
+                        ${lead.status === "Follow-Up" ? "selected" : ""}>
+                        Follow-Up
+                    </option>
+
+                    <option value="Converted"
+                        ${lead.status === "Converted" ? "selected" : ""}>
+                        Converted
+                    </option>
+
+                </select>
+
+            </td>
+
+
+            <td>
+
+                <select onchange="assignExecutive(${actualIndex}, this.value)">
+
+                    <option value="">
+                        Select
+                    </option>
+
+                    <option value="Vaibhav"
+                        ${lead.executive === "Vaibhav" ? "selected" : ""}>
+                        Vaibhav
+                    </option>
+
+                    <option value="Supriya"
+                        ${lead.executive === "Supriya" ? "selected" : ""}>
+                        Supriya
+                    </option>
+
+                </select>
+
+            </td>
+
+
+            <td>
+
+                <button
+                    class="share-btn"
+                    onclick="shareLead(${actualIndex})">
+
+                    Share
+
+                </button>
+
+            </td>
+
+        `;
+
+
+        container.appendChild(row);
+
+    });
 
 }
 
-let leads =
-JSON.parse(
-localStorage.getItem("enquiries")
-) || [];
 
-let container =
-document.getElementById("leadsContainer");
+/* =========================================
+   UPDATE STATUS
+========================================= */
 
-function loadLeads(){
+function updateStatus(index, status) {
 
-container.innerHTML = "";
+    const leads = getLeads();
 
-if(leads.length === 0){
+    if (!leads[index]) return;
 
-container.innerHTML = `
+    leads[index].status = status;
 
-<tr>
+    saveLeads(leads);
 
-<td colspan="9">
-
-No Leads Found
-
-</td>
-
-</tr>
-
-`;
-
-}
-else{
-
-[...leads]
-.reverse()
-.forEach((lead,index)=>{
-
-container.innerHTML += `
-
-<tr>
-
-<td>${index + 1}</td>
-
-<td>${lead.date || "N/A"}</td>
-
-<td>${lead.name || ""}</td>
-
-<td>${lead.phone || ""}</td>
-
-<td>${lead.email || ""}</td>
-
-<td>${lead.message || ""}</td>
-
-<td>
-
-<select
-onchange="updateStatus(${index},this.value)">
-
-<option value="New"
-${lead.status === "New" ? "selected" : ""}>
-
-New
-
-</option>
-
-<option value="Pitched"
-${lead.status === "Pitched" ? "selected" : ""}>
-
-Pitched
-
-</option>
-
-<option value="Follow-Up"
-${lead.status === "Follow-Up" ? "selected" : ""}>
-
-Follow-Up
-
-</option>
-
-<option value="Converted"
-${lead.status === "Converted" ? "selected" : ""}>
-
-Converted
-
-</option>
-
-</select>
-
-</td>
-
-<td>
-
-<select
-onchange="assignExecutive(${index},this.value)">
-
-<option value="">
-Select
-</option>
-
-<option value="Vaibhav"
-${lead.executive === "Vaibhav" ? "selected" : ""}>
-
-Vaibhav
-
-</option>
-
-<option value="Supriya"
-${lead.executive === "Supriya" ? "selected" : ""}>
-
-Supriya
-
-</option>
-
-</select>
-
-</td>
-
-<td>
-
-<button
-class="share-btn"
-onclick="shareLead(${index})">
-
-Share
-
-</button>
-
-</td>
-
-</tr>
-
-`;
-
-});
-
+    loadLeads();
 }
 
+
+/* =========================================
+   ASSIGN EXECUTIVE
+========================================= */
+
+function assignExecutive(index, executive) {
+
+    const leads = getLeads();
+
+    if (!leads[index]) return;
+
+    leads[index].executive = executive;
+
+    saveLeads(leads);
+
+    loadLeads();
 }
 
-function updateStatus(index,status){
 
-let actualIndex =
-leads.length - 1 - index;
+/* =========================================
+   SHARE LEAD
+========================================= */
 
-leads[actualIndex].status = status;
+function shareLead(index) {
 
-localStorage.setItem(
+    const leads = getLeads();
 
-"enquiries",
+    const lead = leads[index];
 
-JSON.stringify(leads)
+    if (!lead) return;
 
-);
 
-}
+    const text = `SAUX SOLUTION - New Lead
 
-function assignExecutive(index,executive){
+Name: ${lead.name || "N/A"}
 
-let actualIndex =
-leads.length - 1 - index;
+Phone: ${lead.phone || "N/A"}
 
-leads[actualIndex].executive =
-executive;
+Email: ${lead.email || "N/A"}
 
-localStorage.setItem(
+Business: ${lead.business || "N/A"}
 
-"enquiries",
-
-JSON.stringify(leads)
-
-);
-
-}
-
-function shareLead(index){
-
-let actualIndex =
-leads.length - 1 - index;
-
-let lead = leads[actualIndex];
-
-let text = `
-
-🔥 SAUX.IN New Lead
-
-Name: ${lead.name}
-
-Phone: ${lead.phone}
-
-Email: ${lead.email}
-
-Requirement: ${lead.message}
+Requirement: ${lead.message || "N/A"}
 
 Status: ${lead.status || "New"}
 
-Executive:
-${lead.executive || "Not Assigned"}
-
+Executive: ${lead.executive || "Not Assigned"}
 `;
 
-window.open(
 
-`https://wa.me/919226494403?text=${encodeURIComponent(text)}`
+    /* MOBILE / SUPPORTED BROWSERS */
 
-);
+    if (navigator.share) {
 
-}
+        navigator.share({
+            title: "SAUX SOLUTION - New Lead",
+            text: text
+        }).catch(() => {});
 
-function searchLead(){
+        return;
+    }
 
-let input =
-document
-.getElementById("searchLead")
-.value
-.toLowerCase();
 
-let rows =
-document.querySelectorAll("tbody tr");
+    /* WHATSAPP FALLBACK */
 
-rows.forEach((row)=>{
+    const whatsappURL =
+        "https://wa.me/919226494403?text=" +
+        encodeURIComponent(text);
 
-if(
-
-row.innerText
-.toLowerCase()
-.includes(input)
-
-){
-
-row.style.display = "";
-
-}
-else{
-
-row.style.display = "none";
+    window.open(whatsappURL, "_blank");
 
 }
 
-});
+
+/* =========================================
+   SEARCH LEADS
+========================================= */
+
+function searchLead() {
+
+    const input =
+        document
+            .getElementById("searchLead")
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    const rows =
+        document.querySelectorAll("#leadsContainer tr");
+
+
+    rows.forEach(row => {
+
+        const text =
+            row.innerText.toLowerCase();
+
+
+        row.style.display =
+            text.includes(input) ? "" : "none";
+
+    });
 
 }
 
-function exportCSV(){
 
-let csv = [];
+/* =========================================
+   EXPORT CSV
+========================================= */
 
-let headers = [
+function exportCSV() {
 
-"No",
-"Date",
-"Name",
-"Phone",
-"Email",
-"Requirement",
-"Status",
-"Executive"
+    const leads = getLeads();
 
-];
 
-csv.push(headers.join(","));
+    if (leads.length === 0) {
 
-leads.forEach((lead,index)=>{
+        alert("No leads available to export.");
 
-let row = [
+        return;
 
-index + 1,
-lead.date || "",
-lead.name || "",
-lead.phone || "",
-lead.email || "",
-lead.message || "",
-lead.status || "New",
-lead.executive || ""
+    }
 
-];
 
-csv.push(row.join(","));
+    const headers = [
+        "No",
+        "Date",
+        "Name",
+        "Phone",
+        "Email",
+        "Business",
+        "Requirement",
+        "Status",
+        "Executive"
+    ];
 
-});
 
-let csvFile = new Blob(
-[csv.join("\n")],
-{
-type:"text/csv"
+    const rows = [headers];
+
+
+    leads.forEach((lead, index) => {
+
+        rows.push([
+            index + 1,
+            lead.date || "",
+            lead.name || "",
+            lead.phone || "",
+            lead.email || "",
+            lead.business || "",
+            lead.message || "",
+            lead.status || "New",
+            lead.executive || ""
+        ]);
+
+    });
+
+
+    const csv = rows
+        .map(row =>
+            row
+                .map(value =>
+                    `"${String(value)
+                        .replace(/"/g, '""')}"`
+                )
+                .join(",")
+        )
+        .join("\n");
+
+
+    const blob = new Blob(
+        [csv],
+        { type: "text/csv;charset=utf-8;" }
+    );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+    link.download =
+        "saux_solution_leads.csv";
+
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+
 }
-);
 
-let downloadLink =
-document.createElement("a");
 
-downloadLink.download =
-"saux_leads.csv";
+/* =========================================
+   LOGOUT
+========================================= */
 
-downloadLink.href =
-window.URL.createObjectURL(csvFile);
+function logout() {
 
-downloadLink.style.display =
-"none";
+    sessionStorage.removeItem("adminLoggedIn");
 
-document.body.appendChild(
-downloadLink
-);
-
-downloadLink.click();
+    window.location.href =
+        "sauxsecureportal2026.html";
 
 }
 
-function logout(){
 
-sessionStorage.removeItem(
-"adminLoggedIn"
-);
+/* =========================================
+   SECURITY - HTML ESCAPE
+========================================= */
 
-window.location.href =
-"sauxsecureportal2026.html";
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 
 }
+
+
+/* =========================================
+   AUTO REFRESH
+========================================= */
 
 loadLeads();
 
-setInterval(function(){
 
-leads =
-JSON.parse(
-localStorage.getItem("enquiries")
-) || [];
+setInterval(() => {
 
-loadLeads();
+    loadLeads();
 
-},3000);
+}, 3000);
+
+
+/* =========================================
+   STORAGE EVENT
+   Updates Admin When Another Tab Changes
+========================================= */
+
+window.addEventListener("storage", event => {
+
+    if (event.key === "enquiries") {
+
+        loadLeads();
+
+    }
+
+});
