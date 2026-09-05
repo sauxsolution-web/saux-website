@@ -1,160 +1,842 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>Enquiry | SAUX SOLUTION</title>
+<meta name="description" content="Send an enquiry to SAUX SOLUTION and tell us how we can help with your Amazon seller business.">
 
-<title>Enquiry - SAUX.IN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="css/style.css">
+<style>
+:root{
+    --blue:#087df2;
+    --blue-dark:#0058c9;
+    --orange:#ff8b00;
+    --navy:#061a35;
+    --text:#17263c;
+    --muted:#718096;
+    --light:#f5f9fe;
+    --line:#dfeaf6;
+    --white:#fff;
+    --shadow:0 24px 65px rgba(5,42,82,.13);
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
+*{box-sizing:border-box;margin:0;padding:0}
 
+html{scroll-behavior:smooth}
+
+body{
+    font-family:Poppins,Arial,sans-serif;
+    color:var(--text);
+    background:#fff;
+    overflow-x:hidden;
+}
+
+a{text-decoration:none;color:inherit}
+
+.container{
+    width:min(1160px,92%);
+    margin:auto;
+}
+
+/* HEADER */
+header{
+    height:76px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(8,125,242,.1);
+}
+
+.nav{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+    color:var(--navy);
+}
+
+.logo img{
+    width:46px;
+    height:46px;
+    object-fit:contain;
+}
+
+.logo span{
+    font-size:18px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    font-size:13px;
+    font-weight:600;
+}
+
+nav a{
+    transition:.25s;
+}
+
+nav a:hover,
+nav a.active{
+    color:var(--blue);
+}
+
+.nav-btn{
+    color:#fff!important;
+    padding:11px 18px;
+    border-radius:11px;
+    background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+    box-shadow:0 10px 25px rgba(8,125,242,.2);
+}
+
+/* HERO */
+.hero{
+    position:relative;
+    min-height:390px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 82% 25%,rgba(255,139,0,.16),transparent 25%),
+        radial-gradient(circle at 10% 80%,rgba(8,125,242,.13),transparent 30%),
+        linear-gradient(180deg,#fff,#f5faff);
+}
+
+.hero:before,
+.hero:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(8,125,242,.12);
+    pointer-events:none;
+}
+
+.hero:before{
+    width:420px;
+    height:420px;
+    right:-190px;
+    top:-220px;
+}
+
+.hero:after{
+    width:240px;
+    height:240px;
+    left:-130px;
+    bottom:-160px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:760px;
+    margin:auto;
+}
+
+.kicker{
+    display:inline-block;
+    color:var(--blue);
+    font-size:11px;
+    letter-spacing:2.5px;
+    font-weight:800;
+    text-transform:uppercase;
+    margin-bottom:13px;
+}
+
+.hero h1{
+    font-size:clamp(42px,5vw,62px);
+    line-height:1.05;
+    letter-spacing:-2px;
+    color:var(--navy);
+}
+
+.gradient{
+    background:linear-gradient(100deg,var(--blue),var(--orange));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:650px;
+    margin:17px auto 0;
+    font-size:14px;
+    line-height:1.85;
+    color:var(--muted);
+}
+
+/* ENQUIRY AREA */
+.enquiry-section{
+    position:relative;
+    padding:75px 0 90px;
+    background:#fff;
+}
+
+.enquiry-grid{
+    display:grid;
+    grid-template-columns:.78fr 1.22fr;
+    gap:25px;
+    align-items:stretch;
+}
+
+/* LEFT PANEL */
+.info-panel{
+    position:relative;
+    overflow:hidden;
+    border-radius:28px;
+    padding:38px;
+    color:#fff;
+    background:linear-gradient(145deg,#061a35,#087df2 72%,#ff8500);
+    box-shadow:var(--shadow);
+}
+
+.info-panel:before,
+.info-panel:after{
+    content:"";
+    position:absolute;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:50%;
+}
+
+.info-panel:before{
+    width:370px;
+    height:370px;
+    right:-190px;
+    top:-160px;
+}
+
+.info-panel:after{
+    width:190px;
+    height:190px;
+    left:-100px;
+    bottom:-100px;
+}
+
+.info-content{
+    position:relative;
+    z-index:2;
+}
+
+.info-panel .kicker{
+    color:#bfe1ff;
+}
+
+.info-panel h2{
+    font-size:29px;
+    line-height:1.25;
+    letter-spacing:-.7px;
+}
+
+.info-panel > .info-content > p{
+    font-size:12px;
+    line-height:1.85;
+    opacity:.88;
+    margin-top:14px;
+}
+
+.contact-list{
+    margin-top:30px;
+    display:grid;
+    gap:13px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:13px;
+    border-radius:14px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.13);
+    transition:.25s;
+}
+
+.contact-item:hover{
+    transform:translateX(4px);
+    background:rgba(255,255,255,.15);
+}
+
+.contact-icon{
+    width:39px;
+    height:39px;
+    border-radius:11px;
+    background:rgba(255,255,255,.14);
+    display:grid;
+    place-items:center;
+    font-size:16px;
+}
+
+.contact-item small{
+    display:block;
+    font-size:8px;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    opacity:.65;
+}
+
+.contact-item strong{
+    display:block;
+    font-size:11px;
+    margin-top:2px;
+    word-break:break-word;
+}
+
+/* FORM */
+.form-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:38px;
+    box-shadow:0 16px 48px rgba(7,42,82,.07);
+}
+
+.form-title{
+    margin-bottom:25px;
+}
+
+.form-title h2{
+    color:var(--navy);
+    font-size:24px;
+    letter-spacing:-.5px;
+}
+
+.form-title p{
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.7;
+    margin-top:5px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:17px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    font-size:10px;
+    font-weight:700;
+    color:var(--navy);
+}
+
+.field input,
+.field textarea,
+.field select{
+    width:100%;
+    border:1px solid var(--line);
+    outline:none;
+    border-radius:12px;
+    padding:13px 14px;
+    font-family:inherit;
+    font-size:12px;
+    color:var(--text);
+    background:#fbfdff;
+    transition:.25s;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+    border-color:var(--blue);
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(8,125,242,.08);
+}
+
+.field textarea{
+    min-height:125px;
+    resize:vertical;
+}
+
+.submit-row{
+    margin-top:20px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.submit-btn{
+    border:0;
+    cursor:pointer;
+    padding:13px 24px;
+    border-radius:12px;
+    color:#fff;
+    font-family:inherit;
+    font-size:12px;
+    font-weight:700;
+    background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+    box-shadow:0 13px 28px rgba(8,125,242,.22);
+    transition:.25s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-3px);
+}
+
+.form-note{
+    font-size:9px;
+    line-height:1.5;
+    color:#8a96a7;
+}
+
+/* TRUST STRIP */
+.trust{
+    margin-top:25px;
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.14);
+    position:relative;
+    z-index:2;
+}
+
+.trust strong{
+    font-size:11px;
+    display:block;
+}
+
+.trust span{
+    font-size:9px;
+    opacity:.7;
+}
+
+/* FOOTER */
+footer{
+    background:#06162c;
+    color:#aebdd0;
+    padding:35px 0 23px;
+}
+
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.footer-brand{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:#fff;
+    font-weight:800;
+}
+
+.footer-brand img{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+}
+
+.footer-top p{
+    font-size:10px;
+    text-align:right;
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:24px;
+    padding-top:16px;
+    font-size:9px;
+}
+
+/* FLOATING CONTACT */
+.floating{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:2000;
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.float{
+    width:49px;
+    height:49px;
+    border-radius:16px;
+    display:grid;
+    place-items:center;
+    color:#fff;
+    font-size:18px;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+    transition:.25s;
+}
+
+.float:hover{
+    transform:translateY(-4px) scale(1.04);
+}
+
+.whatsapp{background:#20bf6b}
+.phone{background:var(--blue)}
+.email{background:var(--orange)}
+
+/* ANIMATION */
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:850px){
+    .enquiry-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-panel{
+        min-height:auto;
+    }
+}
+
+@media(max-width:650px){
+    header{height:68px}
+
+    .logo img{
+        width:41px;
+        height:41px;
+    }
+
+    .logo span{
+        font-size:16px;
+    }
+
+    nav a:not(.nav-btn){
+        display:none;
+    }
+
+    .hero{
+        min-height:340px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:12px;
+    }
+
+    .enquiry-section{
+        padding:48px 0 65px;
+    }
+
+    .info-panel,
+    .form-card{
+        padding:27px;
+        border-radius:22px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .submit-row{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .footer-top,
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .footer-top p{
+        text-align:left;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
+    <div class="container nav">
 
-<div class="logo">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="SAUX SOLUTION">
+            <span>SAUX SOLUTION</span>
+        </a>
 
-<img src="assets/logo.png" alt="SAUX Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="service.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="enquiry.html" class="active">Enquiry</a>
+            <a href="#enquiryForm" class="nav-btn">Send Enquiry</a>
+        </nav>
 
-<h2>SAUX.IN</h2>
-
-</div>
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="services.html">Services</a>
-
-</nav>
-
+    </div>
 </header>
 
-<section class="page-banner">
+<section class="hero">
+    <div class="container hero-content reveal">
 
-<h1>Send Enquiry</h1>
+        <div class="kicker">Let's Connect</div>
 
-<p>
-Tell us your business requirement and our team will contact you shortly.
-</p>
+        <h1>
+            Start a <span class="gradient">Conversation.</span>
+        </h1>
 
+        <p>
+            Have a question or want to discuss your requirement?
+            Send us your details and our team will get in touch with you.
+        </p>
+
+    </div>
 </section>
 
-<section class="form-section">
+<section class="enquiry-section">
 
-<form id="enquiryForm">
+    <div class="container enquiry-grid">
 
-<input
-type="text"
-id="name"
-placeholder="Full Name"
-required>
+        <!-- CONTACT INFORMATION -->
+        <div class="info-panel reveal">
 
-<input
-type="email"
-id="email"
-placeholder="Email Address"
-required>
+            <div class="info-content">
 
-<input
-type="tel"
-id="phone"
-placeholder="Phone Number"
-required>
+                <div class="kicker">SAUX SOLUTION</div>
 
-<textarea
-id="message"
-placeholder="Write Your Requirement"
-required>
+                <h2>We'd Be Happy To Hear From You.</h2>
 
-</textarea>
+                <p>
+                    Tell us about your requirement, your goals or simply start
+                    a conversation with our team. We believe every good
+                    relationship starts with a simple conversation.
+                </p>
 
-<button
-type="submit"
-class="btn">
+                <div class="contact-list">
 
-Submit Enquiry
+                    <a href="tel:9226494403" class="contact-item">
+                        <div class="contact-icon">☎</div>
+                        <div>
+                            <small>Call Us</small>
+                            <strong>+91 92264 94403</strong>
+                        </div>
+                    </a>
 
-</button>
+                    <a href="mailto:sauxsolution@gmail.com" class="contact-item">
+                        <div class="contact-icon">✉</div>
+                        <div>
+                            <small>Email Us</small>
+                            <strong>sauxsolution@gmail.com</strong>
+                        </div>
+                    </a>
 
-</form>
+                    <a href="https://wa.me/919226494403" target="_blank" class="contact-item">
+                        <div class="contact-icon">◔</div>
+                        <div>
+                            <small>WhatsApp</small>
+                            <strong>Chat With Us</strong>
+                        </div>
+                    </a>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">⌖</div>
+                        <div>
+                            <small>Office</small>
+                            <strong>Jalna, Maharashtra – 431203</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="trust">
+                    <strong>SAUX SOLUTION</strong>
+                    <span>Built with purpose. Driven by trust. Focused on growth.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+        <div class="form-card reveal">
+
+            <div class="form-title">
+                <h2>Send Your Enquiry</h2>
+                <p>
+                    Fill in the details below and share what you would like
+                    to discuss with us.
+                </p>
+            </div>
+
+            <form id="enquiryForm">
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            required>
+                    </div>
+
+                    <div class="field">
+                        <label for="business">Business / Company Name</label>
+                        <input
+                            type="text"
+                            id="business"
+                            name="business"
+                            placeholder="Enter business name">
+                    </div>
+
+                    <div class="field full">
+                        <label for="message">Your Requirement</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us about your requirement..."
+                            required></textarea>
+                    </div>
+
+                </div>
+
+                <div class="submit-row">
+
+                    <button type="submit" class="submit-btn">
+                        Submit Enquiry →
+                    </button>
+
+                    <span class="form-note">
+                        Your details are used only to respond to your enquiry.
+                    </span>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
 
 </section>
 
 <footer>
 
-<div class="footer-content">
+    <div class="container">
 
-<div>
+        <div class="footer-top">
 
-<h2>SAUX.IN</h2>
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="SAUX SOLUTION">
+                <span>SAUX SOLUTION</span>
+            </div>
 
-<p>
-Professional eCommerce Seller Services
-</p>
+            <p>
+                Built with purpose. Driven by trust. Focused on growth.
+            </p>
 
-</div>
+        </div>
 
-<div class="footer-links">
+        <div class="footer-bottom">
+            <span>© 2026 SAUX SOLUTION. All Rights Reserved.</span>
+            <span>Jalna, Maharashtra, India</span>
+        </div>
 
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="services.html">Services</a>
-
-<a href="enquiry.html">Enquiry</a>
-
-</div>
-
-<div class="footer-contact">
-
-<p>
-📞 +91 9226494403
-</p>
-
-<p>
-📧 sauxsolution@gmail.com
-</p>
-
-<p>
-🌐 www.saux.in
-</p>
-
-</div>
-
-</div>
-
-<p class="copyright">
-
-© 2026 SAUX.IN | All Rights Reserved
-
-</p>
+    </div>
 
 </footer>
 
-<a
-href="https://wa.me/919226494403"
-class="whatsapp-float">
+<!-- FLOATING DIRECT CONTACT BUTTONS -->
+<div class="floating">
 
-💬
+    <a
+        href="https://wa.me/919226494403"
+        target="_blank"
+        class="float whatsapp"
+        aria-label="WhatsApp">
+        ◔
+    </a>
 
-</a>
+    <a
+        href="tel:9226494403"
+        class="float phone"
+        aria-label="Call SAUX SOLUTION">
+        ☎
+    </a>
 
-<script src="js/enquiry.js?v=999"></script>
+    <a
+        href="mailto:sauxsolution@gmail.com"
+        class="float email"
+        aria-label="Email SAUX SOLUTION">
+        ✉
+    </a>
+
+</div>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+
+<!-- Keep your existing enquiry.js if it handles form submission -->
+<script src="js/enquiry.js?v=1000"></script>
 
 </body>
-
 </html>
