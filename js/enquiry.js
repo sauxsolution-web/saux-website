@@ -1,50 +1,163 @@
-document
-.getElementById("enquiryForm")
-.addEventListener("submit", function(e){
+/* =========================================
+   SAUX SOLUTION - ENQUIRY SUBMISSION
+========================================= */
 
-e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
 
-let enquiry = {
+    const form = document.getElementById("enquiryForm");
 
-name:
-document.getElementById("name").value,
+    if (!form) {
+        console.error("SAUX SOLUTION: enquiryForm not found.");
+        return;
+    }
 
-email:
-document.getElementById("email").value,
 
-phone:
-document.getElementById("phone").value,
+    form.addEventListener("submit", function (event) {
 
-message:
-document.getElementById("message").value,
+        event.preventDefault();
 
-date:
-new Date().toLocaleString(),
 
-status:"New",
+        /* GET FORM VALUES */
 
-executive:""
+        const name =
+            document.getElementById("name")?.value.trim() || "";
 
-};
+        const email =
+            document.getElementById("email")?.value.trim() || "";
 
-let enquiries =
-JSON.parse(
-localStorage.getItem("enquiries")
-) || [];
+        const phone =
+            document.getElementById("phone")?.value.trim() || "";
 
-enquiries.push(enquiry);
+        const business =
+            document.getElementById("business")?.value.trim() || "";
 
-localStorage.setItem(
-"enquiries",
-JSON.stringify(enquiries)
-);
+        const message =
+            document.getElementById("message")?.value.trim() || "";
 
-alert(
-"Enquiry Submitted Successfully"
-);
 
-document
-.getElementById("enquiryForm")
-.reset();
+        /* VALIDATION */
+
+        if (!name || !email || !phone || !message) {
+
+            alert("Please fill all required fields.");
+
+            return;
+        }
+
+
+        /* GET EXISTING ENQUIRIES */
+
+        let enquiries = [];
+
+        try {
+
+            enquiries =
+                JSON.parse(
+                    localStorage.getItem("enquiries")
+                ) || [];
+
+        } catch (error) {
+
+            console.error(
+                "Error reading existing enquiries:",
+                error
+            );
+
+            enquiries = [];
+
+        }
+
+
+        /* CREATE NEW LEAD */
+
+        const lead = {
+
+            id:
+                "SAUX-" +
+                Date.now(),
+
+            date:
+                new Date().toLocaleString("en-IN"),
+
+            name:
+                name,
+
+            email:
+                email,
+
+            phone:
+                phone,
+
+            business:
+                business,
+
+            message:
+                message,
+
+            status:
+                "New",
+
+            executive:
+                ""
+
+        };
+
+
+        /* ADD NEW LEAD */
+
+        enquiries.push(lead);
+
+
+        /* SAVE TO LOCAL STORAGE */
+
+        try {
+
+            localStorage.setItem(
+                "enquiries",
+                JSON.stringify(enquiries)
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Unable to save enquiry:",
+                error
+            );
+
+            alert(
+                "Unable to save your enquiry. Please try again."
+            );
+
+            return;
+
+        }
+
+
+        /* VERIFY SAVE */
+
+        const saved =
+            JSON.parse(
+                localStorage.getItem("enquiries")
+            ) || [];
+
+
+        console.log(
+            "SAUX SOLUTION enquiry saved:",
+            saved
+        );
+
+
+        /* SUCCESS MESSAGE */
+
+        alert(
+            "Thank you! Your enquiry has been submitted successfully. Our team will contact you shortly."
+        );
+
+
+        /* CLEAR FORM */
+
+        form.reset();
+
+    });
 
 });
